@@ -1,0 +1,71 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta content="text/html; charset=UTF-8" http-equiv="content-type">
+    <title>WorkingDraft</title>
+  </head>
+  <body>
+    <h4>PREREQUISITES</h4>
+    <p>As mentioned in the README.md file, Eamon CS has no formal
+      installer.&nbsp; There are good points and bad points to this.&nbsp; On
+      the one hand, it is a simple matter of unzipping the Eamon-CSmaster.zip
+      file downloaded from GitHub to set up for play (if you did that, as
+      opposed to doing a Git Clone).&nbsp; Also, it means there is no installer
+      to maintain, which frees up time for other things like engine enhancements
+      or developing adventures. </p>
+    <p>A disadvantage to this approach is the ECS developer/gamer is responsible
+      for installing all system prerequisites.&nbsp; Otherwise, ECS will not run
+      when any of the .bat or .sh QuickLaunch files are double-clicked.&nbsp;
+      Typically, this is manifested by a console window popping up and then
+      disappearing quickly, caused by a missing dotnet.exe program.&nbsp; If you
+      find that you cannot get Eamon CS to run on Windows, your first order of
+      business should be to download and install the following files (in order):</p>
+    <p>Programmers who want to play, step through, or develop the source code: </p>
+    <p style="margin-left: 40px;"><a href="https://dotnet.microsoft.com/download/dotnet-framework/thank-you/net48-developer-pack-offline-installer">Microsoft
+        .NET Framework 4.8 SDK</a></p>
+    <div style="margin-left: 40px;"> </div>
+    <p style="margin-left: 40px;"><a href="https://dotnet.microsoft.com/download/dotnet-core/thank-you/sdk-2.2.207-windows-x64-installer">Microsoft
+        .NET Core 2.2 SDK</a></p>
+    <div style="margin-left: 40px;"> </div>
+    <p style="margin-left: 40px;"><a href="https://visualstudio.microsoft.com/thank-you-downloading-visual-studio/?sku=Community&amp;rel=16">Microsoft
+        Visual Studio Community 2019 <br>
+      </a></p>
+    <div style="margin-left: 40px;"> </div>
+    <ul style="margin-left: 40px;">
+      <li>Installer option: .NET desktop development</li>
+      <li>Installer option: Mobile development with .NET</li>
+    </ul>
+    <div style="margin-left: 40px;"> </div>
+    <p>Gamers who want to play:</p>
+    <p style="margin-left: 40px;"><a href="https://dotnet.microsoft.com/download/dotnet-framework/thank-you/net48-offline-installer">Microsoft
+        .NET Framework 4.8</a></p>
+    <p style="margin-left: 40px;"><a href="https://dotnet.microsoft.com/download/dotnet-core/thank-you/runtime-2.2.8-windows-x64-installer">Microsoft
+        .NET Core 2.2</a></p>
+    <div style="margin-left: 40px;"> </div>
+    <p>Note:&nbsp; Eamon CS should be fully compatible with new versions of .NET
+      Core.&nbsp; If you wish to run the system using a more recent version of
+      .NET Core, you must download VS 2019+ and recompile the Plugin Manager
+      program to target it.&nbsp; The newer .NET Core must also be installed on
+      your system.&nbsp; See the Post-Installation Topics section for more
+      details. </p>
+    <p>A second disadvantage on Windows leads to a useful tip regarding the
+      downloaded .zip file.&nbsp; You should always right-click on the .zip file
+      and select "unblock" to avoid the security warnings, as shown below:</p>
+    <div style="text-align: center;"><img title="UnblockECS.jpg" alt="UnblockECS.jpg"
+        src="../../assets/images/WorkingDraft/UnblockECS.jpg"><br>
+    </div>
+    <br>
+    <div style="text-align: center;"><img title="UnblockECS02.jpg" alt="UnblockECS02.jpg"
+        src="../../assets/images/WorkingDraft/UnblockECS02.jpg"><br>
+    </div>
+    <br>
+    The prerequisites on Unix are similar: a version of Mono that is .NET
+    Framework 4.7.2+ and .NET Core 2.X compatible. The means to satisfy these
+    requirements vary from platform to platform. Eamon CS on Unix should only be
+    pursued by those who are confident enough to see it through via their own
+    devices. The game runs correctly on Ubuntu Linux and FreeBSD, and may also
+    work on other Unix variants. However, due to input-related issues, OS X
+    requires a formal port to be done.<br>
+    <br>
+  </body>
+</html>
