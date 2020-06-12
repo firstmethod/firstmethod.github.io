@@ -79,13 +79,11 @@
       A second disadvantage on Windows leads to a useful tip regarding the
       downloaded .zip file.&nbsp; You should always right-click on the .zip file
       and select "unblock" to avoid the security warnings, as shown below:</p>
-    <div style="text-align: center;"><img title="UnblockECS.jpg" alt="UnblockECS.jpg"
-
+    <div style="text-align: center;"><img title="UnblockECS.jpg" alt="UnblockECS.jpg"
         src="../../assets/images/WorkingDraft/UnblockECS.jpg"><br>
     </div>
     <br>
-    <div style="text-align: center;"><img title="UnblockECS02.jpg" alt="UnblockECS02.jpg"
-
+    <div style="text-align: center;"><img title="UnblockECS02.jpg" alt="UnblockECS02.jpg"
         src="../../assets/images/WorkingDraft/UnblockECS02.jpg"><br>
     </div>
     <br>
@@ -106,8 +104,7 @@
       section.&nbsp; The use of Visual Studio is described in the section called
       Using The Visual Studio Debugger.&nbsp; The following screenshot shows how
       to determine which versions of .NET Core are present on your system:</p>
-    <div style="text-align: center;"><img style="width: 898px; height: 438px;" title="IncompatibleNetCoreError.jpg"
-
+    <div style="text-align: center;"><img style="width: 898px; height: 438px;" title="IncompatibleNetCoreError.jpg"
         alt="IncompatibleNetCoreError.jpg" src="../../assets/images/WorkingDraft/IncompatibleNetCoreError.jpg"><br>
     </div>
     <p>To recompile the EamonPM.WindowsUnix project, load the Eamon.Desktop
@@ -116,13 +113,150 @@
       Target Framework drop-down list on the Application tab, then click the
       Save button:</p>
     <br>
-    <div style="text-align: center;"><img title="CompileForNetCore3Plus.jpg" alt="CompileForNetCore3Plus.jpg"
-
+    <div style="text-align: center;"><img title="CompileForNetCore3Plus.jpg" alt="CompileForNetCore3Plus.jpg"
         src="../../assets/images/WorkingDraft/CompileForNetCore3Plus.jpg"><br>
     </div>
     <p>After doing this, right-click on the EamonPM.WindowsUnix project and
       choose Clean.&nbsp; Then right-click on the project and select
       Build.&nbsp; If you receive no errors, Eamon CS should now work with your
       installed .NET Core.</p>
+    <h4>PROGRAMS, LIBRARIES AND PLUGINS</h4>
+    <p>The plugin-based architecture used by Eamon CS extends to the Main Hall,
+      the Dungeon Designer, and all adventures.&nbsp; A Plugin Manager program
+      specific to either Desktop or Mobile environments manages them:</p>
+    <table style="width: 50%;margin-left: auto;margin-right: auto;" border="1">
+      <tbody>
+        <tr>
+          <td>System\Bin\EamonPM.WindowsUnix.dll</td>
+          <td>Eamon CS Windows/Unix Plugin Manager</td>
+        </tr>
+        <tr>
+          <td>System\Bin\EamonPM.Android-Signed.apk</td>
+          <td>Eamon CS Android Plugin Manager</td>
+        </tr>
+        <tr>
+          <td>System\Bin\EamonDD.dll</td>
+          <td>Eamon CS Dungeon Designer Plugin</td>
+        </tr>
+        <tr>
+          <td>System\Bin\EamonMH.dll</td>
+          <td>Eamon CS Main Hall Plugin</td>
+        </tr>
+        <tr>
+          <td>System\Bin\EamonRT.dll</td>
+          <td>Eamon CS Adventure Plugin</td>
+        </tr>
+        <tr>
+          <td>System\Bin\EamonVS.dll</td>
+          <td>Eamon CS/Visual Studio Automation Library</td>
+        </tr>
+        <tr>
+          <td>System\Bin\Eamon.dll</td>
+          <td>Eamon CS Library</td>
+        </tr>
+        <tr>
+          <td>System\Bin\Polenter.SharpSerializer.dll</td>
+          <td>SharpSerializer.Library</td>
+        </tr>
+      </tbody>
+    </table>
+    <p>Additionally, you have some adventures:</p>
+    <table style="width: 50%;margin-left: auto;margin-right: auto;" border="1">
+      <tbody>
+        <tr>
+          <td>System\Bin\TheBeginnersCave.dll<br>
+          </td>
+          <td>Eamon CS Adventure Plugin<br>
+          </td>
+        </tr>
+        <tr>
+          <td style="width: 331.95px;">System\Bin\BeginnersForest.dll<br>
+          </td>
+          <td style="width: 346.55px;">Eamon CS Adventure Plugin<br>
+          </td>
+        </tr>
+        <tr>
+          <td>System\Bin\TheTrainingGround.dll<br>
+          </td>
+          <td>Eamon CS Adventure Plugin<br>
+          </td>
+        </tr>
+        <tr>
+          <td>System\Bin\TheSubAquanLaboratory.dll<br>
+          </td>
+          <td>Eamon CS Adventure Plugin<br>
+          </td>
+        </tr>
+        <tr>
+          <td>System\Bin\ARuncibleCargo.dll<br>
+          </td>
+          <td>Eamon CS Adventure Plugin<br>
+          </td>
+        </tr>
+        <tr>
+          <td>System\Bin\StrongholdOfKahrDur.dll<br>
+          </td>
+          <td>Eamon CS Adventure Plugin<br>
+          </td>
+        </tr>
+        <tr>
+          <td>System\Bin\TheTempleOfNgurct.dll<br>
+          </td>
+          <td>Eamon CS Adventure Plugin<br>
+          </td>
+        </tr>
+        <tr>
+          <td>System\Bin\WrenholdsSecretVigil.dll<br>
+          </td>
+          <td>Eamon CS Adventure Plugin<br>
+          </td>
+        </tr>
+        <tr>
+          <td>System\Bin\ TheVileGrimoireOfJaldial.dll<br>
+          </td>
+          <td>Eamon CS Adventure Plugin<br>
+          </td>
+        </tr>
+        <tr>
+          <td>System\Bin\ LandOfTheMountainKing.dll<br>
+          </td>
+          <td>Eamon CS Adventure Plugin<br>
+          </td>
+        </tr>
+      </tbody>
+    </table>
+    <p>Conceptually, each plugin is a discrete program.&nbsp; It exposes a
+      Program class with a Main method that takes a collection of arguments,
+      much like any C-based program.&nbsp; The difference is that the Plugin
+      Manager is what "executes" the plugin, not the calling C#
+      environment.&nbsp; At the bottom of the software stack, you have
+      Polenter.SharpSerializer.dll which handles loading and saving of the
+      game's textfiles and Eamon.dll which holds code common to all ECS
+      plugins.&nbsp; EamonRT.dll contains the vanilla game engine used by all
+      non-customized adventures.&nbsp; For customized adventures, the game
+      plugin (e.g., TheBeginnersCave.dll) contains custom code specific to that
+      game, built by leveraging EamonRT.dll.&nbsp; It is a "modded" version of
+      the game engine.</p>
+    <p>Plugins can share any logic with this implementation.&nbsp; For example,
+      an interesting idea would be to create a "campaign library" that contains
+      shared code for many derived adventures.</p>
+    <p>The source code for Plugin Managers and system plugins resides in the
+      appropriate directory under System; for adventures, it is in the
+      adventure-specific directory under Adventures.</p>
+    <p>The Main Hall textfiles reside in System\Bin, making them easily
+      accessible to all plugins.&nbsp; Game-specific textfiles (both original
+      and save game) reside under Adventures in their respective game
+      directories.</p>
+    <p>Here is a final note on the architectural differences between ECS Desktop
+      and Mobile.&nbsp; For Desktop, the plugins reside in the System\Bin
+      directory and are loaded by EamonPM.WindowsUnix.dll only when needed (and
+      reused once loaded).&nbsp; In contrast, when building
+      EamonPM.Android-Signed.apk, all plugins are statically linked in, and all
+      textfiles are embedded, producing a monolithic application.&nbsp; When
+      delivering the .apk onto the mobile device, the textfiles copy (when
+      appropriate) to the device's file system - the plugins remain part of the
+      application.&nbsp; In spite of this, the plugin managers are very similar
+      internally.</p>
+    <br>
   </body>
 </html>
