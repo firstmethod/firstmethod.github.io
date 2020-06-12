@@ -5,15 +5,43 @@
     <title>WorkingDraft</title>
   </head>
   <body>
+    <h4>PREFACE</h4>
+    <p>[Note:&nbsp; this document is a work in progress] </p>
+    <p>This document is intended to describe the various facets of Eamon
+      CS.&nbsp; The real documentation will be a formal set:&nbsp; full source
+      code commenting, a Player's Manual, a Dungeon Designer's Manual and a
+      Class Reference.&nbsp; It will take quite a while to put all that
+      together, so in the meantime, hopefully, this will suffice. <br>
+      &nbsp;<br>
+      Eamon CS (ECS) is a port of the Eamon roleplaying game to the C#
+      programming language.&nbsp; It is the production version of a prior system
+      called Eamon AC (EAC), an ANSI C prototype intended to extract Eamon out
+      of BASIC.&nbsp; If you have EAC on your system, you should uninstall it
+      before using ECS, as it is now obsolete. <br>
+      &nbsp;<br>
+      This system is a hybrid of Donald Brown's Classic Eamon and the most
+      modern BASIC Eamon available, Frank Black Production's Eamon Deluxe.&nbsp;
+      It is also directly based on the EAC prototype.&nbsp; Eamon CS borrows
+      liberally from and bears a strong resemblance to all these sources in
+      various areas.&nbsp;&nbsp; <br>
+      &nbsp;<br>
+      The game has evolved rapidly over its short lifespan.&nbsp; First, it
+      moved to a plugin-based architecture unique to this branch of Eamon, then
+      into the various flavors of Unix, and most recently into the Android
+      mobile device space.&nbsp; The game engine has improved with each one of a
+      small, but growing collection of custom-built adventures created along the
+      way.&nbsp; The different facets of Eamon CS share a common code
+      base.&nbsp; Where necessary it will be distinguished as Eamon CS Desktop
+      for traditional workstations and Eamon CS Mobile for mobile devices. </p>
     <h4>PREREQUISITES</h4>
     <p>As mentioned in the README.md file, Eamon CS has no formal
       installer.&nbsp; There are good points and bad points to this.&nbsp; On
-      the one hand, it is a simple matter of unzipping the Eamon-CSmaster.zip
+      the one hand, it is a simple matter of unzipping the Eamon-CS-master.zip
       file downloaded from GitHub to set up for play (if you did that, as
       opposed to doing a Git Clone).&nbsp; Also, it means there is no installer
       to maintain, which frees up time for other things like engine enhancements
-      or developing adventures. </p>
-    <p>A disadvantage to this approach is the ECS developer/gamer is responsible
+      or developing adventures. <br>
+      A disadvantage to this approach is the ECS developer/gamer is responsible
       for installing all system prerequisites.&nbsp; Otherwise, ECS will not run
       when any of the .bat or .sh QuickLaunch files are double-clicked.&nbsp;
       Typically, this is manifested by a console window popping up and then
@@ -47,25 +75,54 @@
       .NET Core, you must download VS 2019+ and recompile the Plugin Manager
       program to target it.&nbsp; The newer .NET Core must also be installed on
       your system.&nbsp; See the Post-Installation Topics section for more
-      details. </p>
-    <p>A second disadvantage on Windows leads to a useful tip regarding the
+      details. <br>
+      A second disadvantage on Windows leads to a useful tip regarding the
       downloaded .zip file.&nbsp; You should always right-click on the .zip file
       and select "unblock" to avoid the security warnings, as shown below:</p>
-    <div style="text-align: center;"><img title="UnblockECS.jpg" alt="UnblockECS.jpg"
+    <div style="text-align: center;"><img title="UnblockECS.jpg" alt="UnblockECS.jpg"
+
         src="../../assets/images/WorkingDraft/UnblockECS.jpg"><br>
     </div>
     <br>
-    <div style="text-align: center;"><img title="UnblockECS02.jpg" alt="UnblockECS02.jpg"
+    <div style="text-align: center;"><img title="UnblockECS02.jpg" alt="UnblockECS02.jpg"
+
         src="../../assets/images/WorkingDraft/UnblockECS02.jpg"><br>
     </div>
     <br>
-    The prerequisites on Unix are similar: a version of Mono that is .NET
-    Framework 4.7.2+ and .NET Core 2.X compatible. The means to satisfy these
-    requirements vary from platform to platform. Eamon CS on Unix should only be
-    pursued by those who are confident enough to see it through via their own
-    devices. The game runs correctly on Ubuntu Linux and FreeBSD, and may also
-    work on other Unix variants. However, due to input-related issues, OS X
-    requires a formal port to be done.<br>
+    <p>The prerequisites on Unix are similar: a version of Mono that is .NET
+      Framework 4.7.2+ and .NET Core 2.X compatible. The means to satisfy these
+      requirements vary from platform to platform. Eamon CS on Unix should only
+      be pursued by those who are confident enough to see it through via their
+      own devices. The game runs correctly on Ubuntu Linux and FreeBSD, and may
+      also work on other Unix variants. However, due to input-related issues, OS
+      X requires a formal port to be done.</p>
+    <h4>POST-INSTALLATION TOPICS</h4>
+    <p>The binaries for Eamon CS are compiled to use .NET Core 2.X, but the
+      system should be fully compatible with new versions of .NET Core that
+      conform to .NET Standard 2.0.&nbsp; If you have a newer version of .NET
+      Core on your system and don't want to download 2.X, you can recompile the
+      EamonPM.WindowsUnix project to target it.&nbsp; To do this, you must first
+      install Visual Studio 2019+, as described in the Prerequisites
+      section.&nbsp; The use of Visual Studio is described in the section called
+      Using The Visual Studio Debugger.&nbsp; The following screenshot shows how
+      to determine which versions of .NET Core are present on your system:</p>
+    <div style="text-align: center;"><img style="width: 898px; height: 438px;" title="IncompatibleNetCoreError.jpg"
+
+        alt="IncompatibleNetCoreError.jpg" src="../../assets/images/WorkingDraft/IncompatibleNetCoreError.jpg"><br>
+    </div>
+    <p>To recompile the EamonPM.WindowsUnix project, load the Eamon.Desktop
+      solution in Visual Studio.&nbsp; Right-click on the project and choose
+      Properties.&nbsp; Select the appropriate version of .NET Core in the
+      Target Framework drop-down list on the Application tab, then click the
+      Save button:</p>
     <br>
+    <div style="text-align: center;"><img title="CompileForNetCore3Plus.jpg" alt="CompileForNetCore3Plus.jpg"
+
+        src="../../assets/images/WorkingDraft/CompileForNetCore3Plus.jpg"><br>
+    </div>
+    <p>After doing this, right-click on the EamonPM.WindowsUnix project and
+      choose Clean.&nbsp; Then right-click on the project and select
+      Build.&nbsp; If you receive no errors, Eamon CS should now work with your
+      installed .NET Core.</p>
   </body>
 </html>
