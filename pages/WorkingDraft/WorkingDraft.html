@@ -25,12 +25,11 @@
     <p>The game has evolved rapidly over its short lifespan.&nbsp; First, it
       moved to a plugin-based architecture unique to this branch of Eamon, then
       into the various flavors of Unix, and most recently into the Android
-      mobile device space.&nbsp; The game engine has improved with
-      each one of a small, but growing collection of custom-built adventures
-      created along the way.&nbsp; The different facets of Eamon CS share a
-      common code base.&nbsp; Where necessary it will be distinguished as Eamon
-      CS Desktop for traditional workstations and Eamon CS Mobile for mobile
-      devices. </p>
+      mobile device space.&nbsp; The game engine has improved with each one of a
+      small, but growing collection of custom-built adventures created along the
+      way.&nbsp; The different facets of Eamon CS share a common code
+      base.&nbsp; Where necessary it will be distinguished as Eamon CS Desktop
+      for traditional workstations and Eamon CS Mobile for mobile devices. </p>
     <h4>PREREQUISITES</h4>
     <p>As mentioned in the README.md file, Eamon CS has no formal
       installer.&nbsp; There are good points and bad points to this.&nbsp; On
@@ -72,15 +71,15 @@
       downloaded .zip file.&nbsp; You should always right-click on the .zip file
       and select "unblock" to avoid the security warnings, as shown below:</p>
     <br>
-    <div style="text-align: center;"><img style="max-width: 100%; max-height: 100%;" title="UnblockECS.jpg"
+    <div style="text-align: center;"><img style="max-width: 100%; max-height: 100%;"
 
-        alt="UnblockECS.jpg" src="../../assets/images/WorkingDraft/UnblockECS.jpg">
+        title="UnblockECS.jpg" alt="UnblockECS.jpg" src="../../assets/images/WorkingDraft/UnblockECS.jpg">
     </div>
     <br>
     <br>
-    <div style="text-align: center;"><img style="max-width: 100%; max-height: 100%;" title="UnblockECS02.jpg"
+    <div style="text-align: center;"><img style="max-width: 100%; max-height: 100%;"
 
-        alt="UnblockECS02.jpg" src="../../assets/images/WorkingDraft/UnblockECS02.jpg">
+        title="UnblockECS02.jpg" alt="UnblockECS02.jpg" src="../../assets/images/WorkingDraft/UnblockECS02.jpg">
     </div>
     <br>
     <p>The prerequisites on Unix are similar: a version of Mono that is .NET
@@ -101,10 +100,11 @@
       Using The Visual Studio Debugger.&nbsp; The following screenshot shows how
       to determine which versions of .NET Core are present on your system:</p>
     <br>
-    <div style="text-align: center;"><img style="max-width: 100%; max-height: 100%;" title="IncompatibleNetCoreError.jpg"
+    <div style="text-align: center;"><img style="max-width: 100%; max-height: 100%;"
 
-        alt="IncompatibleNetCoreError.jpg" src="../../assets/images/WorkingDraft/IncompatibleNetCoreError.jpg">
-    </div>
+        title="IncompatibleNetCoreError.jpg" alt="IncompatibleNetCoreError.jpg"
+
+        src="../../assets/images/WorkingDraft/IncompatibleNetCoreError.jpg"> </div>
     <br>
     <p>To recompile the EamonPM.WindowsUnix project, load the Eamon.Desktop
       solution in Visual Studio.&nbsp; Right-click on the project and choose
@@ -112,9 +112,9 @@
       Target Framework drop-down list on the Application tab, then click the
       Save button:</p>
     <br>
-    <div style="text-align: center;"><img style="max-width: 100%; max-height: 100%;" title="CompileForNetCore3Plus.jpg"
+    <div style="text-align: center;"><img style="max-width: 100%; max-height: 100%;"
 
-        alt="CompileForNetCore3Plus.jpg" src="../../assets/images/WorkingDraft/CompileForNetCore3Plus.jpg">
+        title="CompileForNetCore3Plus.jpg" alt="CompileForNetCore3Plus.jpg" src="../../assets/images/WorkingDraft/CompileForNetCore3Plus.jpg">
     </div>
     <br>
     <p>After doing this, right-click on the EamonPM.WindowsUnix project and
@@ -446,9 +446,9 @@
       console window, choose Properties, and then the Options tab. Ensure the
       Use Legacy Console checkbox is checked:</p>
     <br>
-    <div style="text-align: center;"><img style="max-width: 100%; max-height: 100%;" title="UseLegacyConsole.jpg"
+    <div style="text-align: center;"><img style="max-width: 100%; max-height: 100%;"
 
-        alt="UseLegacyConsole.jpg" src="../../assets/images/WorkingDraft/UseLegacyConsole.jpg">
+        title="UseLegacyConsole.jpg" alt="UseLegacyConsole.jpg" src="../../assets/images/WorkingDraft/UseLegacyConsole.jpg">
     </div>
     <br>
     <h4>MISCELLANEOUS GAMEPLAY NOTES</h4>
@@ -540,22 +540,17 @@
       avoid the use of GOTO except in specific circumstances (goto Cleanup).
       Doing this gives the game engine a clean, deterministic quality.</p>
     <h4>USING THE VISUAL STUDIO DEBUGGER</h4>
-    <p>Eamon CS was built using Visual Studio 2019, a powerful, modern
-      integrated development environment (IDE) used by programmers worldwide. It
-      can be obtained using a link in the Prerequisites section. There are many
-      tutorials on the web that go into detail on using Visual Studio; that
-      topic is outside the scope of this document. If you do some research on
-      your own, make sure you focus on using the debugger, which will be the
-      point of this section. The IDE can be used to develop new games, modify
-      existing games, and to step through the source code at all levels to
-      better understand its inner workings. A few more notes: </p>
-    <ul>
-      <li>The screenshots depict VS 2017, but newer versions of Visual Studio
-        should be functionally equivalent.</li>
-      <li>This discussion assumes VS 2019 on Windows; if you're using a
-        different development environment or a different OS, the steps may vary.</li>
-    </ul>
-    <p>To step through the Eamon CS source code, do the following:</p>
+    <p>Eamon CS was built with Visual Studio 2019, a powerful, modern integrated
+      development environment (IDE) used by programmers worldwide. It can be
+      obtained through a link in the Prerequisites section. Many tutorials on
+      the web explore Visual Studio in detail; that topic is outside the scope
+      of this document. If you do some research on your own, make sure to focus
+      on using the debugger, which will be the point of this section. The IDE
+      can be used to develop new games, modify existing games, and step through
+      the source code to clarify its inner workings. This discussion assumes VS
+      2019 on Windows; if you're in a different development environment or a
+      different OS, the steps may vary. To step through the Eamon CS source
+      code, do the following:</p>
     <ol>
       <li>Make a backup of your repository directory if you downloaded a .zip
         file. If you Git Cloned the system, you can make a new development
@@ -766,10 +761,11 @@
       QuickLaunch a new .bat or .sh file that when run, will enable an Adventure
       Support Menu under Utilities. This file is LoadAdventureSupportMenu:</p>
     <br>
-    <div style="text-align: center;"><img style="max-width: 100%; max-height: 100%;" title="LoadAdventureSupportMenu.jpg"
+    <div style="text-align: center;"><img style="max-width: 100%; max-height: 100%;"
 
-        alt="LoadAdventureSupportMenu.jpg" src="../../assets/images/WorkingDraft/LoadAdventureSupportMenu.jpg">
-    </div>
+        title="LoadAdventureSupportMenu.jpg" alt="LoadAdventureSupportMenu.jpg"
+
+        src="../../assets/images/WorkingDraft/LoadAdventureSupportMenu.jpg"> </div>
     <br>
     <p>Depending on your system configuration, there may be a few manual steps
       that you must do if you plan to create Custom adventures. Perform these
