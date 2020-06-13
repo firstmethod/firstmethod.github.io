@@ -25,11 +25,12 @@
     <p>The game has evolved rapidly over its short lifespan.&nbsp; First, it
       moved to a plugin-based architecture unique to this branch of Eamon, then
       into the various flavors of Unix, and most recently into the Android
-      mobile device space.&nbsp; The game engine has improved with each one of a
-      small, but growing collection of custom-built adventures created along the
-      way.&nbsp; The different facets of Eamon CS share a common code
-      base.&nbsp; Where necessary it will be distinguished as Eamon CS Desktop
-      for traditional workstations and Eamon CS Mobile for mobile devices. </p>
+      mobile device space.&nbsp; The game engine has improved with
+      each one of a small, but growing collection of custom-built adventures
+      created along the way.&nbsp; The different facets of Eamon CS share a
+      common code base.&nbsp; Where necessary it will be distinguished as Eamon
+      CS Desktop for traditional workstations and Eamon CS Mobile for mobile
+      devices. </p>
     <h4>PREREQUISITES</h4>
     <p>As mentioned in the README.md file, Eamon CS has no formal
       installer.&nbsp; There are good points and bad points to this.&nbsp; On
@@ -46,27 +47,21 @@
       find that you cannot get Eamon CS to run on Windows, your first order of
       business should be to download and install the following files (in order):</p>
     <p>Programmers who want to play, step through, or develop the source code: </p>
-    <p style="margin-left: 40px;"><a href="https://dotnet.microsoft.com/download/dotnet-framework/thank-you/net48-developer-pack-offline-installer">Microsoft
-        .NET Framework 4.8 SDK</a></p>
-    <div style="margin-left: 40px;"> </div>
-    <p style="margin-left: 40px;"><a href="https://dotnet.microsoft.com/download/dotnet-core/thank-you/sdk-2.2.207-windows-x64-installer">Microsoft
-        .NET Core 2.2 SDK</a></p>
-    <div style="margin-left: 40px;"> </div>
-    <p style="margin-left: 40px;"><a href="https://visualstudio.microsoft.com/thank-you-downloading-visual-studio/?sku=Community&amp;rel=16">Microsoft
-        Visual Studio Community 2019 <br>
-      </a></p>
-    <div style="margin-left: 40px;"> </div>
-    <ul style="margin-left: 40px;">
+    <a href="https://dotnet.microsoft.com/download/dotnet-framework/thank-you/net48-developer-pack-offline-installer">Microsoft
+      .NET Framework 4.8 SDK</a><br>
+    <a href="https://dotnet.microsoft.com/download/dotnet-core/thank-you/sdk-2.2.207-windows-x64-installer">Microsoft
+      .NET Core 2.2 SDK</a><br>
+    <a href="https://visualstudio.microsoft.com/thank-you-downloading-visual-studio/?sku=Community&amp;rel=16">Microsoft
+      Visual Studio Community 2019</a>
+    <ul>
       <li>Installer option: .NET desktop development</li>
       <li>Installer option: Mobile development with .NET</li>
     </ul>
-    <div style="margin-left: 40px;"> </div>
     <p>Gamers who want to play:</p>
-    <p style="margin-left: 40px;"><a href="https://dotnet.microsoft.com/download/dotnet-framework/thank-you/net48-offline-installer">Microsoft
-        .NET Framework 4.8</a></p>
-    <p style="margin-left: 40px;"><a href="https://dotnet.microsoft.com/download/dotnet-core/thank-you/runtime-2.2.8-windows-x64-installer">Microsoft
-        .NET Core 2.2</a></p>
-    <div style="margin-left: 40px;"> </div>
+    <a href="https://dotnet.microsoft.com/download/dotnet-framework/thank-you/net48-offline-installer">Microsoft
+      .NET Framework 4.8</a><br>
+    <a href="https://dotnet.microsoft.com/download/dotnet-core/thank-you/runtime-2.2.8-windows-x64-installer">Microsoft
+      .NET Core 2.2</a>
     <p>Note:&nbsp; Eamon CS should be fully compatible with new versions of .NET
       Core.&nbsp; If you wish to run the system using a more recent version of
       .NET Core, you must download VS 2019+ and recompile the Plugin Manager
@@ -77,13 +72,13 @@
       downloaded .zip file.&nbsp; You should always right-click on the .zip file
       and select "unblock" to avoid the security warnings, as shown below:</p>
     <br>
-    <div style="text-align: center;"><img style="width: 50%; height: auto;" title="UnblockECS.jpg"
+    <div style="text-align: center;"><img style="max-width: 100%; max-height: 100%;" title="UnblockECS.jpg"
 
         alt="UnblockECS.jpg" src="../../assets/images/WorkingDraft/UnblockECS.jpg">
     </div>
     <br>
     <br>
-    <div style="text-align: center;"><img style="width: 22%; height: auto;" title="UnblockECS02.jpg"
+    <div style="text-align: center;"><img style="max-width: 100%; max-height: 100%;" title="UnblockECS02.jpg"
 
         alt="UnblockECS02.jpg" src="../../assets/images/WorkingDraft/UnblockECS02.jpg">
     </div>
@@ -106,7 +101,7 @@
       Using The Visual Studio Debugger.&nbsp; The following screenshot shows how
       to determine which versions of .NET Core are present on your system:</p>
     <br>
-    <div style="text-align: center;"><img style="width: 50%; height: auto;" title="IncompatibleNetCoreError.jpg"
+    <div style="text-align: center;"><img style="max-width: 100%; max-height: 100%;" title="IncompatibleNetCoreError.jpg"
 
         alt="IncompatibleNetCoreError.jpg" src="../../assets/images/WorkingDraft/IncompatibleNetCoreError.jpg">
     </div>
@@ -117,7 +112,7 @@
       Target Framework drop-down list on the Application tab, then click the
       Save button:</p>
     <br>
-    <div style="text-align: center;"><img style="width: 50%; height: auto;" title="CompileForNetCore3Plus.jpg"
+    <div style="text-align: center;"><img style="max-width: 100%; max-height: 100%;" title="CompileForNetCore3Plus.jpg"
 
         alt="CompileForNetCore3Plus.jpg" src="../../assets/images/WorkingDraft/CompileForNetCore3Plus.jpg">
     </div>
@@ -363,6 +358,464 @@
       you decide to write adventures or run the system in a non-default manner.</p>
     <p>Eamon CS Mobile mirrors this QuickLaunch hierarchy using a series of
       ListViews to provide a similar experience.</p>
+    <h4>SUGGESTED GAMEPLAY SETTINGS</h4>
+    <p>Eamon CS runs as a set of 64-bit Console applications. It became apparent
+      during development that the default settings for Console windows are not
+      ideal when playing a text-based game. The system tries to adjust the
+      window size to an optimal setting, but you may wish to experiment with the
+      other settings to see what appeals to you. Strangely enough, I've found
+      aesthetics make a big difference in the quality of the gameplay as well as
+      the ease of use for tools like EamonDD. This topic is highly subjective,
+      but the following ideas produced some interesting results:</p>
+    <ol>
+      <li>When running ECS, right-click on the Console window title bar and
+        choose properties. Windows 10 provides the following settings; the
+        properties available on other versions may differ.</li>
+      <ol>
+        <br>
+        <br>
+        <div style="text-align: center;"><img style="max-width: 100%; max-height: 100%;"
+
+            title="ECSProperties.jpg" alt="ECSProperties.jpg" src="../../assets/images/WorkingDraft/ECSProperties.jpg">
+        </div>
+        <br>
+        <br>
+        <div style="text-align: center;"><img style="max-width: 100%; max-height: 100%;"
+
+            title="ECSProperties02.jpg" alt="ECSProperties02.jpg" src="../../assets/images/WorkingDraft/ECSProperties02.jpg">
+        </div>
+        <br>
+        <br>
+      </ol>
+      <li>Font Tab -</li>
+      <ol>
+        Size: 12-16<br>
+        Font: Consolas or Deja Vu Sans Mono<br>
+        Bold: Optional
+      </ol>
+      <br>
+      <li>Layout Tab -</li>
+      <ol>
+        Screen Buffer Size -<br>
+        <ol>
+          Width: 80<br>
+          Height: 9999
+        </ol>
+        Window Size -
+        <ol>
+          Width: 80<br>
+          Height: 50 (you can adjust this up or down based on screen resolution)
+        </ol>
+      </ol>
+      <br>
+      <li>Colors Tab -</li>
+      <ol>
+        Screen Text -<br>
+        <ol>
+          Selected Color Values -
+          <ol>
+            Red: 0<br>
+            Green: 255<br>
+            Blue: 0
+          </ol>
+        </ol>
+        Screen Background -
+        <ol>
+          Selected Color Values -
+          <ol>
+            Red: 0<br>
+            Green: 0<br>
+            Blue: 0
+          </ol>
+        </ol>
+      </ol>
+    </ol>
+    <p>Eamon CS tries to set the values on the Layout Tab to those shown above,
+      so you shouldn't need to change them. The Screen Buffer Width and Window
+      Width should always be 80 columns. The Screen Buffer Height is strongly
+      suggested to be 9999. The Screen Text shown above is Green with a Black
+      background and has a retro-vibe to it, like an Apple II monitor. If you
+      prefer amber the RGB values [255,165,0] might work for you. As time has
+      passed, I settled on a white background with black text, as shown in the
+      various images in this document. Once you have the settings you're happy
+      with, click OK and they should persist across ECS programs.</p>
+    <p>The newest versions of Windows (10+) contain a rewritten command console
+      program (CMD.exe). It seems to have bugs that produce intermittent cursor
+      artifacts in Eamon CS. If you are experiencing this issue, you might try
+      running the command console in legacy mode. Right-click on any Eamon CS
+      console window, choose Properties, and then the Options tab. Ensure the
+      Use Legacy Console checkbox is checked:</p>
     <br>
+    <div style="text-align: center;"><img style="max-width: 100%; max-height: 100%;" title="UseLegacyConsole.jpg"
+
+        alt="UseLegacyConsole.jpg" src="../../assets/images/WorkingDraft/UseLegacyConsole.jpg">
+    </div>
+    <br>
+    <h4>MISCELLANEOUS GAMEPLAY NOTES</h4>
+    <p>The parser of the game has been enhanced to allow more flexible input.
+      You can enter stuff like "PUT my sword INSIDE my backpack" or "OPEN that
+      jewelry box" or "ATTACK the rats" or "GIVE the spices TO the hermit". The
+      standard [VERB] [subject1] [subject2] pattern of Eamon Deluxe remains, but
+      ECS will discard the articles before processing further. Even though it is
+      more typing, some players may find it more immersive. Of course, you can
+      always use the compact syntax if you prefer.</p>
+    <p>The system has been enhanced to support a variety of container types. You
+      can store contents in, on, under, or behind depending on the container.
+      Under and Behind Containers are similar to In Containers, but cannot be
+      opened or closed and have no key. On Containers have special behavior, the
+      contents are exposed and can be manipulated using any standard command.</p>
+    <p>The game engine contains a few new commands, summarized below:</p>
+    <ol>
+      <li>"INFO" gives information about the played adventure.</li>
+      <br>
+      <li>"SETTINGS" allows you to control a variety of general and
+        game-specific configuration options. You can change your settings at any
+        point. It is a good idea to use this command when a game is started to
+        see what's available to you.</li>
+      <br>
+      <li>"HINTS" gives you a list of hints for the current adventure. You
+        should always carefully read EAMON CS 1.6 GENERAL HELP and EAMON CS 1.6
+        NEW COMMANDS as these hints may be subtly different than their Eamon
+        Deluxe counterparts. Consider the following:</li>
+      <br>
+      <li>"GO" [door] allows you to pass through a free-standing non-directional
+        door (e.g., the overgrown path in Test Adventure).</li>
+      <br>
+      <li>"INVENTORY" [container] is a parallel to "INVENTORY" [monster]. This
+        command lists the container's contents, and typically only works with In
+        Containers and On Containers. </li>
+      <br>
+      <li>EXAMINE or LOOK [in|on|under|behind] [container] can also be used to
+        list the contents of a container. These verbs are sensitive to the
+        preposition used and will display the appropriate content list if any.
+        There are a variety of prepositional synonyms available. If you use a
+        preposition unrelated to containment (or none at all), it will result in
+        the default behavior where the description is displayed. </li>
+    </ol>
+    <h4>QUICK ARCHITECTURAL OVERVIEW</h4>
+    <p>The entire Eamon CS system was written from scratch and aggressively
+      exploits the C# language. Not just a port, this is an expansive toolkit
+      used to build games based on the Eamon ruleset. It has more in common with
+      traditional Interactive Fiction systems like TADS or Inform. Eamon CS
+      games are built by sub-classing existing classes in any library/plugin,
+      but especially Eamon.dll or EamonRT.dll, and overriding default behavior
+      where needed. You can subclass every class in the system, and generic
+      improvements made to individual adventures can be pushed back into the
+      base framework for use by all games. As time goes on, the system will grow
+      in flexibility and power.</p>
+    <p>The textfile format used by Eamon CS deserves an explanation. The game
+      produces ASCII XML files that represent C# object graphs, a radical data
+      storage paradigm shift. These files also play a critical role in the
+      development of customized adventures. Take a look in the MONSTERS.XML file
+      in Test Adventure (a non-customized adventure), and you will see the
+      serialized class is Eamon.Game.Monster (from Eamon.dll). But in The
+      Beginner's Cave, you will see it's TheBeginnersCave.Game.Monster (from
+      TheBeginnersCave.dll). These are two different classes, the second is a
+      subclass of the first, and implements custom code that is explicitly used
+      by The Beginner's Cave. Now compare the batch file EditTestAdventure.bat,
+      which contains the command-line argument "-pfn EamonRT.dll" with
+      EditTheBeginnersCave.bat, which includes "-pfn TheBeginnersCave.dll". In
+      the first, the flag instructs EamonDD to load the base engine. In the
+      second, it loads TheBeginnersCave.dll and uses any customized classes it
+      finds (like the Monster class) when creating new objects. This whole topic
+      is fairly complex and begs to be part of a formal document set, but at
+      least this gives you an idea of how it works.</p>
+    <p>With BASIC Eamons that use files containing just data, you can bypass the
+      Dungeon Designer program altogether and build these files by hand. You
+      should avoid this practice in Eamon CS due to the specialized textfile
+      format. The EamonDD program is instrumental in producing textfiles of the
+      correct format, and you should rely on it to do so. However, you can still
+      manually tweak the textfiles with your favorite editor. Just be very
+      careful not to violate the file format, as the
+      Polenter.SharpSerializer.dll library can be picky.</p>
+    <p>The EamonRT.dll base adventure runtime takes the form of a Finite State
+      Machine (FSM). For those unfamiliar, this is a technique used to model
+      complex program behavior. The main game loop is 15 lines long; all complex
+      behavior resides in subclasses of the State class. Player commands derive
+      from the Command class, which is itself derived from State. Customized
+      adventures will almost always subclass various States or Commands to
+      provide specialized behavior. It is also straightforward to create new
+      States or Commands and link them into the FSM if needed. Finally, if you
+      look through the code, you will see that special care has been taken to
+      avoid the use of GOTO except in specific circumstances (goto Cleanup).
+      Doing this gives the game engine a clean, deterministic quality.</p>
+    <h4>USING THE VISUAL STUDIO DEBUGGER</h4>
+    <p>Eamon CS was built using Visual Studio 2019, a powerful, modern
+      integrated development environment (IDE) used by programmers worldwide. It
+      can be obtained using a link in the Prerequisites section. There are many
+      tutorials on the web that go into detail on using Visual Studio; that
+      topic is outside the scope of this document. If you do some research on
+      your own, make sure you focus on using the debugger, which will be the
+      point of this section. The IDE can be used to develop new games, modify
+      existing games, and to step through the source code at all levels to
+      better understand its inner workings. A few more notes: </p>
+    <ul>
+      <li>The screenshots depict VS 2017, but newer versions of Visual Studio
+        should be functionally equivalent.</li>
+      <li>This discussion assumes VS 2019 on Windows; if you're using a
+        different development environment or a different OS, the steps may vary.</li>
+    </ul>
+    <p>To step through the Eamon CS source code, do the following:</p>
+    <ol>
+      <li>Make a backup of your repository directory if you downloaded a .zip
+        file. If you Git Cloned the system, you can make a new development
+        branch and focus your work there. Your original branch (or gameplay
+        branch) will remain pristine.</li>
+      <br>
+      <li>In the development directory or branch run
+        EnterMainHallUsingAdventures.bat, and send a character into the
+        adventure you want to step through. You can save the game if you wish,
+        but it is not required; only that the character remains in the
+        adventure. Quit the game, but don't Quit Hall. In this example, we'll
+        step through The Sub-Aquan Laboratory.</li>
+      <ol>
+        <br>
+        <br>
+        <div style="text-align: center;"><img style="max-width: 100%; max-height: 100%;"
+
+            title="GoOnAdventure.jpg" alt="GoOnAdventure.jpg" src="../../assets/images/WorkingDraft/GoOnAdventure.jpg">
+        </div>
+        <br>
+        <br>
+      </ol>
+      <li>Open the Eamon.Adventures solution with Visual Studio.</li>
+      <ol>
+        <br>
+        <br>
+        <div style="text-align: center;"><img style="max-width: 100%; max-height: 100%;"
+
+            title="OpenECSWithVS.jpg" alt="OpenECSWithVS.jpg" src="../../assets/images/WorkingDraft/OpenECSWithVS.jpg">
+        </div>
+        <br>
+        <br>
+      </ol>
+      <li>Once Visual Studio loads the game, right-click on the Solution node
+        and select Batch Build.</li>
+      <ol>
+        <br>
+        <br>
+        <div style="text-align: center;"><img style="max-width: 100%; max-height: 100%;"
+
+            title="VSBatchBuild.jpg" alt="VSBatchBuild.jpg" src="../../assets/images/WorkingDraft/VSBatchBuild.jpg">
+        </div>
+        <br>
+        <br>
+      </ol>
+      <li>Click the Select All button, then click Clean.</li>
+      <ol>
+        <br>
+        <br>
+        <div style="text-align: center;"><img style="max-width: 100%; max-height: 100%;"
+
+            title="VSBatchBuildClean.jpg" alt="VSBatchBuildClean.jpg" src="../../assets/images/WorkingDraft/VSBatchBuildClean.jpg">
+        </div>
+        <br>
+        <br>
+      </ol>
+      <li>Repeat steps 3 through 5 using the Eamon.Desktop solution. You will
+        probably want to open a separate copy of Visual Studio 2019 to do so
+        since you will be recompiling both solutions shortly. </li>
+      <ol>
+        <br>
+        <br>
+        <div style="text-align: center;"><img style="max-width: 100%; max-height: 100%;"
+
+            title="OpenECSWithVS02.jpg" alt="OpenECSWithVS02.jpg" src="../../assets/images/WorkingDraft/OpenECSWithVS02.jpg">
+        </div>
+        <br>
+        <br>
+        <div style="text-align: center;"><img style="max-width: 100%; max-height: 100%;"
+
+            title="VSBatchBuild02.jpg" alt="VSBatchBuild02.jpg" src="../../assets/images/WorkingDraft/VSBatchBuild02.jpg">
+        </div>
+        <br>
+        <br>
+        <div style="text-align: center;"><img style="max-width: 100%; max-height: 100%;"
+
+            title="VSBatchBuildClean02.jpg" alt="VSBatchBuildClean02.jpg" src="../../assets/images/WorkingDraft/VSBatchBuildClean02.jpg">
+        </div>
+        <br>
+        <br>
+      </ol>
+      <li>Ensure the system is in Debug mode (shown inside red circle). In the
+        Eamon.Desktop solution, right-click on the Solution node and click Build
+        Solution.</li>
+      <ol>
+        <br>
+        <br>
+        <div style="text-align: center;"><img style="max-width: 100%; max-height: 100%;"
+
+            title="VSBuildSolutionDebug.jpg" alt="VSBuildSolutionDebug.jpg" src="../../assets/images/WorkingDraft/VSBuildSolutionDebug.jpg">
+        </div>
+        <br>
+        <br>
+      </ol>
+      <li>Ensure the system is in Debug mode (shown inside red circle). In the
+        Eamon.Adventures solution, right-click on the Solution node and click
+        Build Solution.</li>
+      <ol>
+        <br>
+        <br>
+        <div style="text-align: center;"><img style="max-width: 100%; max-height: 100%;"
+
+            title="VSBuildSolutionDebug02.jpg" alt="VSBuildSolutionDebug02.jpg"
+
+            src="../../assets/images/WorkingDraft/VSBuildSolutionDebug02.jpg"> </div>
+        <br>
+        <br>
+      </ol>
+      <li>There should be no errors in the previous steps (see Output Windows).
+        Right-click on the EamonPM.WindowsUnix project and select Set as Startup
+        Project.</li>
+      <ol>
+        <br>
+        <br>
+        <div style="text-align: center;"><img style="max-width: 100%; max-height: 100%;"
+
+            title="VSSetAsStartupProject.jpg" alt="VSSetAsStartupProject.jpg" src="../../assets/images/WorkingDraft/VSSetAsStartupProject.jpg">
+        </div>
+        <br>
+        <br>
+      </ol>
+      <li>Right-click on the EamonPM.WindowsUnix project and select Properties.</li>
+      <ol>
+        <br>
+        <br>
+        <div style="text-align: center;"><img style="max-width: 100%; max-height: 100%;"
+
+            title="VSSetProperties.jpg" alt="VSSetProperties.jpg" src="../../assets/images/WorkingDraft/VSSetProperties.jpg">
+        </div>
+        <br>
+        <br>
+      </ol>
+      <li>Set the Application arguments to the appropriate command line string.
+        In this case, the string was taken directly from
+        ResumeTheSubAquanLaboratory.bat. Make sure you save the changes (click
+        the icon inside the red circle). Side note: you can use any string from
+        any .bat file, depending on which program you want to step through. This
+        includes the Main Hall or the Dungeon Designer. To debug these, you
+        don't need to send a character on an adventure first. See the two
+        examples below.</li>
+      <ol>
+        <br>
+        <br>
+        <div style="text-align: center;"><img style="max-width: 100%; max-height: 100%;"
+
+            title="VSProperties02.jpg" alt="VSProperties02.jpg" src="../../assets/images/WorkingDraft/VSProperties02.jpg">
+        </div>
+        <br>
+        <br>
+        <div style="text-align: center;"><img style="max-width: 100%; max-height: 100%;"
+
+            title="VSProperties03.jpg" alt="VSProperties03.jpg" src="../../assets/images/WorkingDraft/VSProperties03.jpg">
+        </div>
+        <br>
+        <br>
+        <div style="text-align: center;"><img style="max-width: 100%; max-height: 100%;"
+
+            title="VSProperties04.jpg" alt="VSProperties04.jpg" src="../../assets/images/WorkingDraft/VSProperties04.jpg">
+        </div>
+        <br>
+        <br>
+      </ol>
+      <li>Put your breakpoints in the code. In the following examples, the
+        program will break just as it enters the game's main loop, and also as
+        an attack occurs in combat. The final example shows how you must
+        manually load a game’s source code file to put a breakpoint in it. You
+        can set breakpoints anywhere you like in the running program; in our
+        case here, that includes Eamon.dll, EamonRT.dll, and
+        TheSubAquanLaboratory.dll.</li>
+      <ol>
+        <br>
+        <br>
+        <div style="text-align: center;"><img style="max-width: 100%; max-height: 100%;"
+
+            title="VSSetBreakpoint.jpg" alt="VSSetBreakpoint.jpg" src="../../assets/images/WorkingDraft/VSSetBreakpoint.jpg">
+        </div>
+        <br>
+        <br>
+        <div style="text-align: center;"><img style="max-width: 100%; max-height: 100%;"
+
+            title="VSSetBreakpoint02.jpg" alt="VSSetBreakpoint02.jpg" src="../../assets/images/WorkingDraft/VSSetBreakpoint02.jpg">
+        </div>
+        <br>
+        <br>
+        <div style="text-align: center;"><img style="max-width: 100%; max-height: 100%;"
+
+            title="VSSetBreakpoint03.jpg" alt="VSSetBreakpoint03.jpg" src="../../assets/images/WorkingDraft/VSSetBreakpoint03.jpg">
+        </div>
+        <br>
+        <br>
+      </ol>
+      <li>Press F5 to run the program. The game will launch just as if you had
+        double-clicked the ResumeTheSubAquanLaboratory.bat file. If you saved
+        any games, you can restore them at this point as you typically would.
+        You can also start the program or step through it line by line at any
+        point using F10 (step over) or F11 (step into). </li>
+    </ol>
+    <h4>BUILDING NEW ADVENTURES</h4>
+    <p>With Eamon CS, it is still possible to send adventurers to their death
+      for fun and profit, even after all these years! You can create new games
+      with the tools available to you. Standard adventures - that is, those that
+      use the EamonRT generic game engine and have no custom programming - can
+      be built without Visual Studio 2019 Community Edition installed. But
+      Custom adventures (like The Beginner's Cave, etc.) require the VS tool
+      suite to be on your system. Up to this point, it has been a manual effort
+      to bootstrap new games. But significant progress has been made towards
+      fully automating the process. You will find in the EamonDD folder under
+      QuickLaunch a new .bat or .sh file that when run, will enable an Adventure
+      Support Menu under Utilities. This file is LoadAdventureSupportMenu:</p>
+    <br>
+    <div style="text-align: center;"><img style="max-width: 100%; max-height: 100%;" title="LoadAdventureSupportMenu.jpg"
+
+        alt="LoadAdventureSupportMenu.jpg" src="../../assets/images/WorkingDraft/LoadAdventureSupportMenu.jpg">
+    </div>
+    <br>
+    <p>Depending on your system configuration, there may be a few manual steps
+      that you must do if you plan to create Custom adventures. Perform these
+      steps if necessary, before launching this menu for the first time.</p>
+    <ol>
+      <li>There is a new project in Eamon.Desktop called EamonVS that integrates
+        with the Microsoft EnvDTE automation library. EnvDTE is omitted from
+        Eamon CS as it is not on Microsoft's redistribution list. But it was
+        placed on your system when you installed Visual Studio. EamonVS includes
+        it as a reference. The EamonDD program uses EamonVS to automate the
+        process of adding new Custom adventure projects to Eamon.Adventures and
+        to recompile the solution. Note the following two scenarios:</li>
+      <br>
+      <li>Scenario #1: If you are using Visual Studio 2019 Community, installed
+        in the default location, you should be ready to go right now. Open
+        Eamon.Desktop, right-click on the EamonVS project and Build it. If the
+        Build succeeds, skip to the section of text after Step 8. (If the Build
+        fails because it can't find EnvDTE.dll, you're in Scenario #2 - see
+        below).</li>
+      <ol>
+        <br>
+        <br>
+        <div style="text-align: center;"><img style="max-width: 100%; max-height: 100%;"
+
+            title="BuildEamonVSProject.jpg" alt="BuildEamonVSProject.jpg" src="../../assets/images/WorkingDraft/BuildEamonVSProject.jpg">
+        </div>
+        <br>
+        <br>
+      </ol>
+      <li>Scenario #2: If you are using Visual Studio 2019, installed in a
+        non-default location, or you're using a non-Community Edition (e.g.,
+        Professional or Enterprise). You will have to remove the EnvDTE
+        reference from EamonVS, locate EnvDTE in your Visual Studio directory
+        hierarchy, and re-add it as a reference to EamonVS. The EnvDTE library
+        should be about 256KB in size. Once you do this, you should be able to
+        compile EamonVS.</li>
+      <ol>
+        <br>
+        <br>
+        <div style="text-align: center;"><img style="max-width: 100%; max-height: 100%;"
+
+            title="EnvDTERemove.jpg" alt="EnvDTERemove.jpg" src="../../assets/images/WorkingDraft/EnvDTERemove.jpg">
+        </div>
+        <br>
+        <br>
+      </ol>
+    </ol>
   </body>
 </html>
