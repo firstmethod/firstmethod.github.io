@@ -11,21 +11,18 @@
       CS.&nbsp; The real documentation will be a formal set:&nbsp; full source
       code commenting, a Player's Manual, a Dungeon Designer's Manual and a
       Class Reference.&nbsp; It will take quite a while to put all that
-      together, so in the meantime, hopefully, this will suffice. <br>
-      &nbsp;<br>
-      Eamon CS (ECS) is a port of the Eamon roleplaying game to the C#
+      together, so in the meantime, hopefully, this will suffice. </p>
+    <p>Eamon CS (ECS) is a port of the Eamon roleplaying game to the C#
       programming language.&nbsp; It is the production version of a prior system
       called Eamon AC (EAC), an ANSI C prototype intended to extract Eamon out
       of BASIC.&nbsp; If you have EAC on your system, you should uninstall it
-      before using ECS, as it is now obsolete. <br>
-      &nbsp;<br>
-      This system is a hybrid of Donald Brown's Classic Eamon and the most
+      before using ECS, as it is now obsolete.</p>
+    <p>This system is a hybrid of Donald Brown's Classic Eamon and the most
       modern BASIC Eamon available, Frank Black Production's Eamon Deluxe.&nbsp;
       It is also directly based on the EAC prototype.&nbsp; Eamon CS borrows
       liberally from and bears a strong resemblance to all these sources in
-      various areas.&nbsp;&nbsp; <br>
-      &nbsp;<br>
-      The game has evolved rapidly over its short lifespan.&nbsp; First, it
+      various areas.&nbsp;&nbsp; </p>
+    <p>The game has evolved rapidly over its short lifespan.&nbsp; First, it
       moved to a plugin-based architecture unique to this branch of Eamon, then
       into the various flavors of Unix, and most recently into the Android
       mobile device space.&nbsp; The game engine has improved with each one of a
@@ -40,8 +37,8 @@
       file downloaded from GitHub to set up for play (if you did that, as
       opposed to doing a Git Clone).&nbsp; Also, it means there is no installer
       to maintain, which frees up time for other things like engine enhancements
-      or developing adventures. <br>
-      A disadvantage to this approach is the ECS developer/gamer is responsible
+      or developing adventures. </p>
+    <p>A disadvantage to this approach is the ECS developer/gamer is responsible
       for installing all system prerequisites.&nbsp; Otherwise, ECS will not run
       when any of the .bat or .sh QuickLaunch files are double-clicked.&nbsp;
       Typically, this is manifested by a console window popping up and then
@@ -75,17 +72,17 @@
       .NET Core, you must download VS 2019+ and recompile the Plugin Manager
       program to target it.&nbsp; The newer .NET Core must also be installed on
       your system.&nbsp; See the Post-Installation Topics section for more
-      details. <br>
-      A second disadvantage on Windows leads to a useful tip regarding the
+      details. </p>
+    <p>A second disadvantage on Windows leads to a useful tip regarding the
       downloaded .zip file.&nbsp; You should always right-click on the .zip file
       and select "unblock" to avoid the security warnings, as shown below:</p>
+    <br>
     <div style="text-align: center;"><img title="UnblockECS.jpg" alt="UnblockECS.jpg"
-        src="../../assets/images/WorkingDraft/UnblockECS.jpg"><br>
-    </div>
+        src="../../assets/images/WorkingDraft/UnblockECS.jpg"> </div>
+    <br>
     <br>
     <div style="text-align: center;"><img title="UnblockECS02.jpg" alt="UnblockECS02.jpg"
-        src="../../assets/images/WorkingDraft/UnblockECS02.jpg"><br>
-    </div>
+        src="../../assets/images/WorkingDraft/UnblockECS02.jpg"> </div>
     <br>
     <p>The prerequisites on Unix are similar: a version of Mono that is .NET
       Framework 4.7.2+ and .NET Core 2.X compatible. The means to satisfy these
@@ -104,9 +101,11 @@
       section.&nbsp; The use of Visual Studio is described in the section called
       Using The Visual Studio Debugger.&nbsp; The following screenshot shows how
       to determine which versions of .NET Core are present on your system:</p>
+    <br>
     <div style="text-align: center;"><img style="width: 898px; height: 438px;" title="IncompatibleNetCoreError.jpg"
-        alt="IncompatibleNetCoreError.jpg" src="../../assets/images/WorkingDraft/IncompatibleNetCoreError.jpg"><br>
+        alt="IncompatibleNetCoreError.jpg" src="../../assets/images/WorkingDraft/IncompatibleNetCoreError.jpg">
     </div>
+    <br>
     <p>To recompile the EamonPM.WindowsUnix project, load the Eamon.Desktop
       solution in Visual Studio.&nbsp; Right-click on the project and choose
       Properties.&nbsp; Select the appropriate version of .NET Core in the
@@ -114,8 +113,8 @@
       Save button:</p>
     <br>
     <div style="text-align: center;"><img title="CompileForNetCore3Plus.jpg" alt="CompileForNetCore3Plus.jpg"
-        src="../../assets/images/WorkingDraft/CompileForNetCore3Plus.jpg"><br>
-    </div>
+        src="../../assets/images/WorkingDraft/CompileForNetCore3Plus.jpg"> </div>
+    <br>
     <p>After doing this, right-click on the EamonPM.WindowsUnix project and
       choose Clean.&nbsp; Then right-click on the project and select
       Build.&nbsp; If you receive no errors, Eamon CS should now work with your
@@ -124,6 +123,7 @@
     <p>The plugin-based architecture used by Eamon CS extends to the Main Hall,
       the Dungeon Designer, and all adventures.&nbsp; A Plugin Manager program
       specific to either Desktop or Mobile environments manages them:</p>
+    <br>
     <table style="width: 50%;margin-left: auto;margin-right: auto;" border="1">
       <tbody>
         <tr>
@@ -160,7 +160,9 @@
         </tr>
       </tbody>
     </table>
+    <br>
     <p>Additionally, you have some adventures:</p>
+    <br>
     <table style="width: 50%;margin-left: auto;margin-right: auto;" border="1">
       <tbody>
         <tr>
@@ -225,6 +227,7 @@
         </tr>
       </tbody>
     </table>
+    <br>
     <p>Conceptually, each plugin is a discrete program.&nbsp; It exposes a
       Program class with a Main method that takes a collection of arguments,
       much like any C-based program.&nbsp; The difference is that the Plugin
@@ -257,6 +260,102 @@
       appropriate) to the device's file system - the plugins remain part of the
       application.&nbsp; In spite of this, the plugin managers are very similar
       internally.</p>
+    <h4>BATCH FILES</h4>
+    <p>The plugins take a variety of command-line parameters (described below).
+      However, to get you up and running quickly, there is a QuickLaunch folder.
+      (Since there is no formal ECS installer, you may want to create a shortcut
+      to it on your desktop manually). Inside this folder is a set of batch
+      files that you can run directly. The batch files organize into sub-folders
+      based on the underlying plugin they invoke:</p>
+    <br>
+    <table style="width: 60%;margin-left: auto;margin-right: auto;" border="1">
+      <tbody>
+        <tr>
+          <td>EamonDD\EditAdventures.bat</td>
+          <td>Edit the flat Adventures database</td>
+        </tr>
+        <tr>
+          <td>EamonDD\EditCatalog.bat</td>
+          <td>Edit the adventure category Catalog</td>
+        </tr>
+        <tr>
+          <td>EamonDD\EditCharacters.bat</td>
+          <td>Edit the Characters file</td>
+        </tr>
+        <tr>
+          <td>EamonDD\EditContemporary.bat</td>
+          <td>Edit the Contemporary adventures category</td>
+        </tr>
+        <tr>
+          <td>EamonDD\EditFantasy.bat</td>
+          <td>Edit the Fantasy adventures category</td>
+        </tr>
+        <tr>
+          <td>EamonDD\EditSciFi.bat</td>
+          <td>Edit the Sci-Fi adventures category</td>
+        </tr>
+        <tr>
+          <td>EamonDD\EditTest.bat</td>
+          <td>Edit the Test adventures category</td>
+        </tr>
+        <tr>
+          <td>EamonDD\EditWorkbench.bat</td>
+          <td>Edit the Developer's Workbench</td>
+        </tr>
+        <tr>
+          <td>EamonDD\EditWorkInProgress.bat</td>
+          <td>Edit the Work-In-Progress adventures category</td>
+        </tr>
+        <tr>
+          <td>EamonDD\EditARuncibleCargo.bat</td>
+          <td>Edit A Runcible Cargo</td>
+        </tr>
+        <tr>
+          <td>EamonDD\EditBeginnersForest.bat</td>
+          <td>Edit Beginner's Forest</td>
+        </tr>
+        <tr>
+          <td>EamonDD\Edit[AdventureName].bat</td>
+          <td>Edit [AdventureName]</td>
+        </tr>
+        <tr>
+          <td>EamonDD\LoadAdventureSupportMenu.bat</td>
+          <td>Load Adventure Support Menu</td>
+        </tr>
+        <tr>
+          <td>EamonMH\EnterMainHallUsingAdventures.bat</td>
+          <td>Enter the Main Hall using a flat adventure database<sup>1</sup></td>
+        </tr>
+        <tr>
+          <td>EamonMH\EnterMainHallUsingCatalog.bat</td>
+          <td>Enter the Main Hall using a hierarchical adventure database<sup>1</sup></td>
+        </tr>
+        <tr>
+          <td>EamonRT\ResumeARuncibleCargo.bat</td>
+          <td>Resume A Runcible Cargo<sup>2</sup></td>
+        </tr>
+        <tr>
+          <td>EamonRT\ResumeBeginnersForest.bat</td>
+          <td>Resume Beginner's Forest<sup>2</sup></td>
+        </tr>
+        <tr>
+          <td>EamonRT\Resume[AdventureName].bat</td>
+          <td>Resume [AdventureName]<sup>2</sup></td>
+        </tr>
+      </tbody>
+    </table>
+    <br>
+    <p><sup>1</sup> Run these batch files to create a new character or send an
+      existing one into the Main Hall. The only difference between the two batch
+      files is the nature of the adventure database loaded (the same characters
+      will be available regardless).</p>
+    <p><sup>2</sup> Run these batch files to return to an in-progress adventure.
+      Use the RESTORE command to pick up where you left off.</p>
+    <p>You can study the batch files to see how the system launches various
+      programs. You can also create new batch files using these as templates if
+      you decide to write adventures or run the system in a non-default manner.</p>
+    <p>Eamon CS Mobile mirrors this QuickLaunch hierarchy using a series of
+      ListViews to provide a similar experience.</p>
     <br>
   </body>
 </html>
