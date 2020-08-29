@@ -427,28 +427,35 @@
           </ol>
         </ol>
       </ol>
+      <br>
+      <li>Terminal Tab - (when present)</li>
+      <ol>
+	    Cursor Colors -<br>
+		<ol>
+		  Use Color -<br>
+          <ol>
+            Red: [Use Screen Text Red]<br>
+            Green: [Use Screen Text Green]<br>
+            Blue: [Use Screen Text Blue]<br>
+          </ol>
+		</ol>
+      </ol>
     </ol>
     <p>Eamon CS tries to set the values on the Layout Tab to those shown above,
-      so you shouldn't need to change them. The Screen Buffer Width and Window
-      Width should always be 80 columns. The Screen Buffer Height is strongly
-      suggested to be 9999. The Screen Text shown above is Green with a Black
-      background and has a retro-vibe to it, like an Apple II monitor. If you
-      prefer amber the RGB values [255,165,0] might work for you. As time has
-      passed, I settled on a white background with black text, as shown in the
-      various images in this document. Once you have the settings you're happy
-      with, click OK and they should persist across ECS programs.</p>
-    <p>The newest versions of Windows (10+) contain a rewritten command console
-      program (CMD.exe). It seems to have bugs that produce intermittent cursor
-      artifacts in Eamon CS. If you are experiencing this issue, you might try
-      running the command console in legacy mode. Right-click on any Eamon CS
-      console window, choose Properties, and then the Options tab. Ensure the
-      Use Legacy Console checkbox is checked:</p>
-    <br>
-    <div style="text-align: center;"><img style="max-width: 100%; max-height: 100%;"
-
-        title="UseLegacyConsole.jpg" alt="UseLegacyConsole.jpg" src="../../assets/images/WorkingDraft/UseLegacyConsole.jpg">
-    </div>
-    <br>
+	  so you shouldn't need to change them. The Screen Buffer Width and Window
+	  Width should always be 80 columns. The Screen Buffer Height is strongly
+	  suggested to be 9999. The Screen Text shown above is Green with a Black
+	  background and has a retro-vibe, like an Apple II monitor. If you prefer
+	  amber, the RGB values [255,165,0] might work for you. As time has passed,
+	  I settled on a white background with black text, as shown in the various
+	  images in this document. The newest versions of Windows (10+) contain a
+	  rewritten Console program that includes a Terminal Tab. The Inverse Color
+	  radio button, which is selected by default, interacts with the Eamon CS
+	  cursor handling logic to produce unsightly cursor artifacts when the Enter
+	  key is pressed. To work around this, you should select the Use Color radio
+	  button and match the cursor color to the Screen Text color. Once you have
+	  the settings you're happy with, click OK, and they should persist across
+	  ECS programs.</p>
     <h4>MISCELLANEOUS GAMEPLAY NOTES</h4>
     <p>The parser of the game has been enhanced to allow more flexible input.
       You can enter stuff like "PUT my sword INSIDE my backpack" or "OPEN that
@@ -987,22 +994,21 @@
     </div>
     <br>
     <ol start="4">
-      <li>When adding custom code, type public override 
-        and choose the right property or method from the list presented by
-        Intellisense. It is often useful to refer to (or use code from) the
-        parent classes in the Eamon CS base libraries, but when the existing
-        games migrated to the Eamon.Adventures solution they were changed to use
-        file referencing rather than project referencing. Unfortunately, this
-        prevents quick navigation to the parent classes using the typical
-        right-click and Go to Definition or Go to Implementation. Doing this
-        brings up only metadata. There are third-party tools that can overcome
-        this limitation using library de-compilation, but in general, they are
-        commercial products with no Community Edition available. To overcome
-        this, you can open two copies of Visual Studio, one with Eamon.Desktop
-        loaded, the other with Eamon.Adventures. Then when you want to access a
-        parent class, method or property, type the name into the Search Bar and
-        double click the found item. Doing this appears to be the best option
-        available.</li>
+      <li>When adding custom code, type public override and choose the right
+        property or method from the list presented by Intellisense. It is often
+        useful to refer to (or use code from) the parent classes in the Eamon CS
+        base libraries, but when the existing games migrated to the
+        Eamon.Adventures solution they were changed to use file referencing
+        rather than project referencing. Unfortunately, this prevents quick
+        navigation to the parent classes using the typical right-click and Go to
+        Definition or Go to Implementation. Doing this brings up only metadata.
+        There are third-party tools that can overcome this limitation using
+        library de-compilation, but in general, they are commercial products
+        with no Community Edition available. To overcome this, you can open two
+        copies of Visual Studio, one with Eamon.Desktop loaded, the other with
+        Eamon.Adventures. Then when you want to access a parent class, method or
+        property, type the name into the Search Bar and double click the found
+        item. Doing this appears to be the best option available.</li>
     </ol>
     <br>
     <div style="text-align: center;"><img style="max-width: 100%; max-height: 100%;"
@@ -1076,22 +1082,24 @@
       fully played through a title and want to make space on your file system.
       Perhaps you don't like an adventure and want to purge it from your Eamon
       CS repository. Whatever the reasons, the Adventure Support Menu has an
-			option to do game deletion. Choosing this menu option will cause the
-      system to prompt you for some key pieces of data and verify that you
-      want to proceed. If so, it will completely remove all traces of the
-      adventure from your Eamon CS system by doing the following:</p>
+      option to do game deletion. Choosing this menu option will cause the
+      system to prompt you for some key pieces of data and verify that you want
+      to proceed. If so, it will completely remove all traces of the adventure
+      from your Eamon CS system by doing the following:</p>
     <ul>
       <li>Deletes game library/binary files (Custom adventures only)</li>
-      <li>Removes the game project from Eamon.Adventures.sln (Custom adventures only)</li>
+      <li>Removes the game project from Eamon.Adventures.sln (Custom adventures
+        only)</li>
       <li>Removes the game from appropriate Adventure database(s)</li>
-      <li>Leaves the game folder under Adventures intact (but you can manually delete it yourself)</li>
+      <li>Leaves the game folder under Adventures intact (but you can manually
+        delete it yourself)</li>
       <li>Deletes the game QuickLaunch .bat and .sh files</li>
     </ul>
-    <p>If you delete a custom adventure in Unix, you will have to remove the game
-      project manually from Eamon.Adventures.sln since Visual Studio integration
-      is not available on that platform.</p> 
-    <p>As you might expect, once a game has been deleted its data is not recoverable
-      by normal means.</p>
+    <p>If you delete a custom adventure in Unix, you will have to remove the
+      game project manually from Eamon.Adventures.sln since Visual Studio
+      integration is not available on that platform.</p>
+    <p>As you might expect, once a game has been deleted its data is not
+      recoverable by normal means.</p>
     <br>
     <div style="text-align: center;"><img style="max-width: 100%; max-height: 100%;"
 
