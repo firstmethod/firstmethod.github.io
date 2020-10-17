@@ -149,10 +149,6 @@
           <td>Eamon CS Adventure Plugin</td>
         </tr>
         <tr>
-          <td>System\Bin\EamonVS.dll</td>
-          <td>Eamon CS/Visual Studio Automation Library</td>
-        </tr>
-        <tr>
           <td>System\Bin\Eamon.dll</td>
           <td>Eamon CS Library</td>
         </tr>
@@ -808,20 +804,29 @@
 
         src="../../assets/images/WorkingDraft/LoadAdventureSupportMenu.jpg"> </div>
     <br>
-    <p>TODO: REWRITE</p>
-
-
-    <p> Once you have performed any manual steps listed above, you will be able
-      to run LoadAdventureSupportMenu. Creating adventures requires entering
-      just a few key pieces of data. The automated process uses resources
-      embedded within the EamonDD plugin:</p>
+    <p>The Adventure Support Menu allows Eamon CS to integrate seamlessly with
+	  Visual Studio by using the dotnet.exe program.  This integration paradigm
+	  works in both Windows and Unix, even if Visual Studio is not present.  But
+	  when creating a new adventure, there appears to be a minimum requirement
+	  that .NET Core 3.0+ SDK be on your system for total integration. When
+	  dotnet.exe adds an adventure project to the Eamon.Adventures solution,
+	  it uses the --in-root parameter, an option not available in earlier
+	  versions of .NET Core. If it fails, for this reason, you should add the
+	  .csproj file to the solution yourself and manually recompile the game.</p>
+    <p> Before proceeding further, if you downloaded the .zip file for Eamon CS,
+      it might make sense to back up your repository so you can revert if
+      necessary. For those who cloned the repository from GitHub, it might make
+      sense to create a branch for your new adventure so you can back out at any
+      time.</p>
+    <p> Creating adventures requires entering just a few key pieces of data. The
+      automated process uses resources embedded within the EamonDD plugin:</p>
     <ul>
       <li>Creates the game folder under Adventures</li>
       <li>Generates all needed code (Custom adventures only)</li>
       <li>Creates all necessary QuickLaunch .bat and .sh files</li>
-      <li>Adds game to appropriate Adventure database(s)</li>
-      <li>Adds game project to Eamon.Adventures.sln (Custom adventures only)</li>
-      <li>Rebuilds Eamon.Adventures.sln, producing game library (Custom
+      <li>Adds the game to the appropriate Adventure database(s)</li>
+      <li>Adds the game project to Eamon.Adventures.sln (Custom adventures only)</li>
+      <li>Rebuilds the game project, producing game library/binary files (Custom
         adventures only)</li>
     </ul>
     <p>Below we see an example of Custom adventure creation where a new game
@@ -833,8 +838,8 @@
         title="AddGame.jpg" alt="AddGame.jpg" src="../../assets/images/WorkingDraft/AddGame.jpg">
     </div>
     <br>
-    <p>The only thing you need to do to play your game after all this is run the
-      game's Edit[YourAdventureName] .bat or .sh file and add:</p>
+    <p>The only thing you need to do to play your game is run the corresponding
+	  Edit[YourAdventureName] .bat or .sh file and add:</p>
     <ul>
       <li>A Module record</li>
       <li>A Room record</li>
@@ -1047,17 +1052,13 @@
       to proceed. If so, it will completely remove all traces of the adventure
       from your Eamon CS system by doing the following:</p>
     <ul>
-      <li>Deletes game library/binary files (Custom adventures only)</li>
+      <li>Deletes the game library/binary files (Custom adventures only)</li>
       <li>Removes the game project from Eamon.Adventures.sln (Custom adventures
         only)</li>
-      <li>Removes the game from appropriate Adventure database(s)</li>
-      <li>Leaves the game folder under Adventures intact (but you can manually
-        delete it yourself)</li>
+      <li>Removes the game from the appropriate Adventure database(s)</li>
+      <li>Deletes the game folder under Adventures</li>
       <li>Deletes the game QuickLaunch .bat and .sh files</li>
     </ul>
-    <p>If you delete a custom adventure in Unix, you will have to remove the
-      game project manually from Eamon.Adventures.sln since Visual Studio
-      integration is not available on that platform.</p>
     <p>As you might expect, once a game has been deleted its data is not
       recoverable by normal means.</p>
     <br>
