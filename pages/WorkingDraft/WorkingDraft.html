@@ -631,7 +631,7 @@
     </div>
     <br>
     <ol start="3">
-      <li>Open the Eamon.Adventures solution with Visual Studio.</li>
+      <li>Open the Eamon.Desktop solution with Visual Studio.</li>
     </ol>
     <br>
     <div style="text-align: center;"><img style="max-width: 100%; max-height: 100%;"
@@ -659,29 +659,6 @@
     </div>
     <br>
     <ol start="6">
-      <li>Repeat steps 3 through 5 using the Eamon.Desktop solution. You will
-        probably want to open a separate copy of Visual Studio 2019 to do so
-        since you will be recompiling both solutions shortly. </li>
-    </ol>
-    <br>
-    <div style="text-align: center;"><img style="max-width: 100%; max-height: 100%;"
-
-        title="OpenECSWithVS02.jpg" alt="OpenECSWithVS02.jpg" src="../../assets/images/WorkingDraft/OpenECSWithVS02.jpg">
-    </div>
-    <br>
-    <br>
-    <div style="text-align: center;"><img style="max-width: 100%; max-height: 100%;"
-
-        title="VSBatchBuild02.jpg" alt="VSBatchBuild02.jpg" src="../../assets/images/WorkingDraft/VSBatchBuild02.jpg">
-    </div>
-    <br>
-    <br>
-    <div style="text-align: center;"><img style="max-width: 100%; max-height: 100%;"
-
-        title="VSBatchBuildClean02.jpg" alt="VSBatchBuildClean02.jpg" src="../../assets/images/WorkingDraft/VSBatchBuildClean02.jpg">
-    </div>
-    <br>
-    <ol start="7">
       <li>Ensure the system is in Debug mode (shown inside red circle). In the
         Eamon.Desktop solution, right-click on the Solution node and click Build
         Solution.</li>
@@ -692,18 +669,7 @@
         title="VSBuildSolutionDebug.jpg" alt="VSBuildSolutionDebug.jpg" src="../../assets/images/WorkingDraft/VSBuildSolutionDebug.jpg">
     </div>
     <br>
-    <ol start="8">
-      <li>Ensure the system is in Debug mode (shown inside red circle). In the
-        Eamon.Adventures solution, right-click on the Solution node and click
-        Build Solution.</li>
-    </ol>
-    <br>
-    <div style="text-align: center;"><img style="max-width: 100%; max-height: 100%;"
-
-        title="VSBuildSolutionDebug02.jpg" alt="VSBuildSolutionDebug02.jpg" src="../../assets/images/WorkingDraft/VSBuildSolutionDebug02.jpg">
-    </div>
-    <br>
-    <ol start="9">
+    <ol start="7">
       <li>There should be no errors in the previous steps (see Output Windows).
         Right-click on the EamonPM.WindowsUnix project and select Set as Startup
         Project.</li>
@@ -714,7 +680,7 @@
         title="VSSetAsStartupProject.jpg" alt="VSSetAsStartupProject.jpg" src="../../assets/images/WorkingDraft/VSSetAsStartupProject.jpg">
     </div>
     <br>
-    <ol start="10">
+    <ol start="8">
       <li>Right-click on the EamonPM.WindowsUnix project and select Properties.</li>
     </ol>
     <br>
@@ -723,7 +689,7 @@
         title="VSSetProperties.jpg" alt="VSSetProperties.jpg" src="../../assets/images/WorkingDraft/VSSetProperties.jpg">
     </div>
     <br>
-    <ol start="11">
+    <ol start="9">
       <li>Set the Application arguments to the appropriate command line string.
         In this case, the string was taken directly from
         ResumeTheSubAquanLaboratory.bat. Make sure you save the changes (click
@@ -751,14 +717,12 @@
         title="VSProperties04.jpg" alt="VSProperties04.jpg" src="../../assets/images/WorkingDraft/VSProperties04.jpg">
     </div>
     <br>
-    <ol start="12">
-      <li>Put your breakpoints in the code. In the following examples, the
-        program will break just as it enters the game's main loop, and also as
-        an attack occurs in combat. The final example shows how you must
-        manually load a game’s source code file to put a breakpoint in it. You
-        can set breakpoints anywhere you like in the running program; in our
-        case here, that includes Eamon.dll, EamonRT.dll, and
-        TheSubAquanLaboratory.dll.</li>
+    <ol start="10">
+      <li>Put your breakpoints in the code. In the following examples, the program
+	  will break just as it enters the game's main loop, as an attack occurs in
+	  combat, and also in The Sub-Aquan Laboratory's PowerCommand subclass. You
+	  can set breakpoints anywhere you like in the running program; in our case
+	  here, that includes EamonRT.dll and TheSubAquanLaboratory.dll.</li>
     </ol>
     <br>
     <div style="text-align: center;"><img style="max-width: 100%; max-height: 100%;"
@@ -778,7 +742,7 @@
         title="VSSetBreakpoint03.jpg" alt="VSSetBreakpoint03.jpg" src="../../assets/images/WorkingDraft/VSSetBreakpoint03.jpg">
     </div>
     <br>
-    <ol start="13">
+    <ol start="11">
       <li>Press F5 to run the program. The game will launch just as if you had
         double-clicked the ResumeTheSubAquanLaboratory.bat file. If you saved
         any games, you can restore them at this point as you typically would.
@@ -805,14 +769,11 @@
         src="../../assets/images/WorkingDraft/LoadAdventureSupportMenu.jpg"> </div>
     <br>
     <p>The Adventure Support Menu allows Eamon CS to integrate seamlessly with
-	  Visual Studio by using the dotnet.exe program.  This integration paradigm
-	  works in both Windows and Unix, even if Visual Studio is not present.  But
-	  when creating a new adventure, there appears to be a minimum requirement
-	  that .NET Core 3.0+ SDK be on your system for total integration. When
-	  dotnet.exe adds an adventure project to the Eamon.Adventures solution,
-	  it uses the --in-root parameter, an option not available in earlier
-	  versions of .NET Core. If it fails, for this reason, you should add the
-	  .csproj file to the solution yourself and manually recompile the game.</p>
+	Visual Studio by using the dotnet.exe program. With the .NET Core SDK installed,
+	this integration paradigm works in both Windows and Unix, even if Visual Studio
+	is not present. But it hasn't been tested with the .NET Core Runtime and may or
+	may not work. If the integration process fails for any reason, you should add
+	the .csproj file to the solution yourself and manually recompile the game.</p>
     <p> Before proceeding further, if you downloaded the .zip file for Eamon CS,
       it might make sense to back up your repository so you can revert if
       necessary. For those who cloned the repository from GitHub, it might make
@@ -825,7 +786,7 @@
       <li>Generates all needed code (Custom adventures only)</li>
       <li>Creates all necessary QuickLaunch .bat and .sh files</li>
       <li>Adds the game to the appropriate Adventure database(s)</li>
-      <li>Adds the game project to Eamon.Adventures.sln (Custom adventures only)</li>
+      <li>Adds the game project to Eamon.Desktop.sln (Custom adventures only)</li>
       <li>Rebuilds the game project, producing game library/binary files (Custom
         adventures only)</li>
     </ul>
@@ -871,7 +832,7 @@
       to suit your needs. If you want to produce a complex, interesting game
       with lots of special effects, you will almost certainly need to create new
       classes for your adventure. There are numerous examples of this in the
-      adventures contained in the Eamon.Adventures solution. It turns out, the
+      adventures contained in the Eamon.Desktop solution. It turns out, the
       layout of folders and namespaces in Eamon CS lends itself to a simple code
       generation mechanism based on a template discovered while studying the
       already-created games. You can use the Adventure Support Menu to generate
@@ -923,7 +884,7 @@
     <br>
     <ol start="3">
       <li>The following screenshots show what the code generator produced. If
-        you compare this output with the games in Eamon.Adventures you will
+        you compare this output with the games in Eamon.Desktop you will
         quickly see parallels between them. You should fix anything Intellisense
         flags as being invalid, and also hover over the various parts of the
         code to ensure the specified classes/interfaces are correct.</li>
@@ -959,21 +920,18 @@
     </div>
     <br>
     <ol start="4">
-      <li>When adding custom code, type public override and choose the right
-        property or method from the list presented by Intellisense. It is often
-        useful to refer to (or use code from) the parent classes in the Eamon CS
-        base libraries, but when the existing games migrated to the
-        Eamon.Adventures solution they were changed to use file referencing
-        rather than project referencing. Unfortunately, this prevents quick
-        navigation to the parent classes using the typical right-click and Go to
-        Definition or Go to Implementation. Doing this brings up only metadata.
-        There are third-party tools that can overcome this limitation using
-        library de-compilation, but in general, they are commercial products
-        with no Community Edition available. To overcome this, you can open two
-        copies of Visual Studio, one with Eamon.Desktop loaded, the other with
-        Eamon.Adventures. Then when you want to access a parent class, method or
-        property, type the name into the Search Bar and double click the found
-        item. Doing this appears to be the best option available.</li>
+      <li>When adding custom code, type public override, and choose the right
+	  property or method from the list presented by Intellisense. It is often
+	  useful to refer to (or use code from) the parent classes in the Eamon CS
+	  base libraries.  The system uses project referencing throughout, allowing
+	  quick navigation to any class, method, property, or type definition through
+	  a right-click context menu.  Double-click on the symbol to look up, then
+	  right-click on it and choose one of the appropriate menu options to take
+	  you to the code in question.  The Peek Definition and Go To Definition menu
+	  items are what you'll probably use most often, but there are a few other
+	  useful options as well.  When you have finished, click the back arrow to
+	  return to your previous location.  The following example shows quick access
+	  to EamonRT's CombatSystem class.</li>
     </ol>
     <br>
     <div style="text-align: center;"><img style="max-width: 100%; max-height: 100%;"
@@ -1053,7 +1011,7 @@
       from your Eamon CS system by doing the following:</p>
     <ul>
       <li>Deletes the game library/binary files (Custom adventures only)</li>
-      <li>Removes the game project from Eamon.Adventures.sln (Custom adventures
+      <li>Removes the game project from Eamon.Desktop.sln (Custom adventures
         only)</li>
       <li>Removes the game from the appropriate Adventure database(s)</li>
       <li>Deletes the game folder under Adventures</li>
