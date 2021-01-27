@@ -2,7 +2,7 @@
 <html>
   <head>
     <meta content="text/html; charset=UTF-8" http-equiv="content-type">
-    <title>WorkingDraft</title>
+    <title>Technical Paper</title>
   </head>
   <body>
     <h4>PREFACE</h4>
@@ -30,96 +30,6 @@
       way.&nbsp; The different facets of Eamon CS share a common code
       base.&nbsp; Where necessary it will be distinguished as Eamon CS Desktop
       for traditional workstations and Eamon CS Mobile for mobile devices. </p>
-    <h4>PREREQUISITES</h4>
-    <p>As mentioned in the README.md file, Eamon CS has no formal
-      installer.&nbsp; There are good points and bad points to this.&nbsp; On
-      the one hand, it is a simple matter of unzipping the Eamon-CS-master.zip
-      file downloaded from GitHub to set up for play (if you did that, as
-      opposed to doing a Git Clone).&nbsp; Also, it means there is no installer
-      to maintain, which frees up time for other things like engine enhancements
-      or developing adventures. </p>
-    <p>A disadvantage to this approach is the ECS developer/gamer is responsible
-      for installing all system prerequisites.&nbsp; Otherwise, ECS will not run
-      when any of the .bat or .sh QuickLaunch files are double-clicked.&nbsp;
-      Typically, this is manifested by a console window popping up and then
-      disappearing quickly, caused by a missing dotnet.exe program.&nbsp; If you
-      find that you cannot get Eamon CS to run on Windows, your first order of
-      business should be to download and install the following files (in order):</p>
-    <p>Programmers who want to play, step through, or develop the source code: </p>
-    <a target="_blank" href="https://dotnet.microsoft.com/download/dotnet-framework/thank-you/net48-developer-pack-offline-installer">Microsoft
-      .NET Framework 4.8 SDK</a><br>
-    <a target="_blank" href="https://dotnet.microsoft.com/download/dotnet-core/thank-you/sdk-2.2.207-windows-x64-installer">Microsoft
-      .NET Core 2.2 SDK</a><br>
-    <a target="_blank" href="https://visualstudio.microsoft.com/thank-you-downloading-visual-studio/?sku=Community&amp;rel=16">Microsoft
-      Visual Studio Community 2019</a>
-    <ul>
-      <li>Installer option: .NET desktop development</li>
-      <li>Installer option: Mobile development with .NET</li>
-    </ul>
-    <p>Gamers who want to play:</p>
-    <a target="_blank" href="https://dotnet.microsoft.com/download/dotnet-framework/thank-you/net48-offline-installer">Microsoft
-      .NET Framework 4.8</a><br>
-    <a target="_blank" href="https://dotnet.microsoft.com/download/dotnet-core/thank-you/runtime-2.2.8-windows-x64-installer">Microsoft
-      .NET Core 2.2</a>
-    <p>Note:&nbsp; Eamon CS should be fully compatible with new versions of .NET
-      Core.&nbsp; If you wish to run the system using a more recent version of
-      .NET Core, you can download VS 2019+ and recompile the Plugin Manager
-      program to target it.&nbsp; The newer .NET Core must also be installed on
-      your system.&nbsp; See the Post-Installation Topics section for more
-      details. </p>
-    <p>A second disadvantage on Windows leads to a useful tip regarding the
-      downloaded .zip file.&nbsp; You should always right-click on the .zip file
-      and select "unblock" to avoid the security warnings, as shown below:</p>
-    <br>
-    <div style="text-align: center;"><img style="max-width: 100%; max-height: 100%;"
-
-        title="UnblockECS.jpg" alt="UnblockECS.jpg" src="../../assets/images/WorkingDraft/UnblockECS.jpg">
-    </div>
-    <br>
-    <br>
-    <div style="text-align: center;"><img style="max-width: 100%; max-height: 100%;"
-
-        title="UnblockECS02.jpg" alt="UnblockECS02.jpg" src="../../assets/images/WorkingDraft/UnblockECS02.jpg">
-    </div>
-    <br>
-    <p>The prerequisites on Unix are similar: a version of Mono that is .NET
-	Framework 4.7.2+ and .NET Core 2.X compatible. The means to satisfy these
-	requirements vary from platform to platform. Eamon CS on Unix should only
-   be pursued by those who are confident enough to see it through via their
-   own devices. The game runs correctly on Ubuntu Linux and FreeBSD and may
-   also work on other Unix variants, such as macOS (OS X).</p>
-    <h4>POST-INSTALLATION TOPICS</h4>
-    <p>The binaries for Eamon CS are compiled to use .NET Core 2.X, but the
-      system should be fully compatible with new versions of .NET Core that
-      conform to .NET Standard 2.0.&nbsp; If you have a newer version of .NET
-      Core on your system and don't want to download 2.X, you can recompile the
-      EamonPM.WindowsUnix project to target it.&nbsp; To do this, you must first
-      install Visual Studio 2019+, as described in the Prerequisites
-      section.&nbsp; The use of Visual Studio is described in the section called
-      Using The Visual Studio Debugger.&nbsp; The following screenshot shows how
-      to determine which versions of .NET Core are present on your system:</p>
-    <br>
-    <div style="text-align: center;"><img style="max-width: 100%; max-height: 100%;"
-
-        title="IncompatibleNetCoreError.jpg" alt="IncompatibleNetCoreError.jpg"
-
-        src="../../assets/images/WorkingDraft/IncompatibleNetCoreError.jpg"> </div>
-    <br>
-    <p>To recompile the EamonPM.WindowsUnix project, load the Eamon.Desktop
-      solution in Visual Studio.&nbsp; Right-click on the project and choose
-      Properties.&nbsp; Select the appropriate version of .NET Core in the
-      Target Framework drop-down list on the Application tab, then click the
-      Save button:</p>
-    <br>
-    <div style="text-align: center;"><img style="max-width: 100%; max-height: 100%;"
-
-        title="CompileForNetCore3Plus.jpg" alt="CompileForNetCore3Plus.jpg" src="../../assets/images/WorkingDraft/CompileForNetCore3Plus.jpg">
-    </div>
-    <br>
-    <p>After doing this, right-click on the EamonPM.WindowsUnix project and
-      choose Clean.&nbsp; Then right-click on the project and select
-      Build.&nbsp; If you receive no errors, Eamon CS should now work with your
-      installed .NET Core.</p>
     <h4>PROGRAMS, LIBRARIES AND PLUGINS</h4>
     <p>The plugin-based architecture used by Eamon CS extends to the Main Hall,
       the Dungeon Designer, and all adventures.&nbsp; A Plugin Manager program
@@ -370,13 +280,13 @@
     <br>
     <div style="text-align: center;"><img style="max-width: 100%; max-height: 100%;"
 
-        title="ECSProperties.jpg" alt="ECSProperties.jpg" src="../../assets/images/WorkingDraft/ECSProperties.jpg">
+        title="ECSProperties.jpg" alt="ECSProperties.jpg" src="../../assets/images/TechnicalPaper/ECSProperties.jpg">
     </div>
     <br>
     <br>
     <div style="text-align: center;"><img style="max-width: 100%; max-height: 100%;"
 
-        title="ECSProperties02.jpg" alt="ECSProperties02.jpg" src="../../assets/images/WorkingDraft/ECSProperties02.jpg">
+        title="ECSProperties02.jpg" alt="ECSProperties02.jpg" src="../../assets/images/TechnicalPaper/ECSProperties02.jpg">
     </div>
     <br>
     <ol start="2">
@@ -472,9 +382,9 @@
 	  "!", "?", ";", ",", "and", "then", "also".  Additionally, [subject1] can be a list
 	  of direct objects, separated by these same tokens.</li>
       <br>
-      <li>If the parser encounters an "out-of-band" command that is not the first
-	  command in the sentence such as INFO, STATUS, SAVE, RESTORE, etc. it will
-	  discard that command, and all that follow it.</li>
+      <li>If the parser encounters an "out-of-band" command (such as INFO, STATUS, SAVE,
+	  RESTORE, etc.) that is not the first command in the sentence, it will discard that
+	  command and all that follow it.</li>
       <br>
       <li>If the parser encounters a movement command in the sentence, it will
 	  discard all commands that follow it.  This restriction is for technical
@@ -626,7 +536,7 @@
     <br>
     <div style="text-align: center;"><img style="max-width: 100%; max-height: 100%;"
 
-        title="GoOnAdventure.jpg" alt="GoOnAdventure.jpg" src="../../assets/images/WorkingDraft/GoOnAdventure.jpg">
+        title="GoOnAdventure.jpg" alt="GoOnAdventure.jpg" src="../../assets/images/TechnicalPaper/GoOnAdventure.jpg">
     </div>
     <br>
     <ol start="3">
@@ -635,7 +545,7 @@
     <br>
     <div style="text-align: center;"><img style="max-width: 100%; max-height: 100%;"
 
-        title="OpenECSWithVS.jpg" alt="OpenECSWithVS.jpg" src="../../assets/images/WorkingDraft/OpenECSWithVS.jpg">
+        title="OpenECSWithVS.jpg" alt="OpenECSWithVS.jpg" src="../../assets/images/TechnicalPaper/OpenECSWithVS.jpg">
     </div>
     <br>
     <ol start="4">
@@ -645,7 +555,7 @@
     <br>
     <div style="text-align: center;"><img style="max-width: 100%; max-height: 100%;"
 
-        title="VSBatchBuild.jpg" alt="VSBatchBuild.jpg" src="../../assets/images/WorkingDraft/VSBatchBuild.jpg">
+        title="VSBatchBuild.jpg" alt="VSBatchBuild.jpg" src="../../assets/images/TechnicalPaper/VSBatchBuild.jpg">
     </div>
     <br>
     <ol start="5">
@@ -654,7 +564,7 @@
     <br>
     <div style="text-align: center;"><img style="max-width: 100%; max-height: 100%;"
 
-        title="VSBatchBuildClean.jpg" alt="VSBatchBuildClean.jpg" src="../../assets/images/WorkingDraft/VSBatchBuildClean.jpg">
+        title="VSBatchBuildClean.jpg" alt="VSBatchBuildClean.jpg" src="../../assets/images/TechnicalPaper/VSBatchBuildClean.jpg">
     </div>
     <br>
     <ol start="6">
@@ -665,7 +575,7 @@
     <br>
     <div style="text-align: center;"><img style="max-width: 100%; max-height: 100%;"
 
-        title="VSBuildSolutionDebug.jpg" alt="VSBuildSolutionDebug.jpg" src="../../assets/images/WorkingDraft/VSBuildSolutionDebug.jpg">
+        title="VSBuildSolutionDebug.jpg" alt="VSBuildSolutionDebug.jpg" src="../../assets/images/TechnicalPaper/VSBuildSolutionDebug.jpg">
     </div>
     <br>
     <ol start="7">
@@ -676,7 +586,7 @@
     <br>
     <div style="text-align: center;"><img style="max-width: 100%; max-height: 100%;"
 
-        title="VSSetAsStartupProject.jpg" alt="VSSetAsStartupProject.jpg" src="../../assets/images/WorkingDraft/VSSetAsStartupProject.jpg">
+        title="VSSetAsStartupProject.jpg" alt="VSSetAsStartupProject.jpg" src="../../assets/images/TechnicalPaper/VSSetAsStartupProject.jpg">
     </div>
     <br>
     <ol start="8">
@@ -685,7 +595,7 @@
     <br>
     <div style="text-align: center;"><img style="max-width: 100%; max-height: 100%;"
 
-        title="VSSetProperties.jpg" alt="VSSetProperties.jpg" src="../../assets/images/WorkingDraft/VSSetProperties.jpg">
+        title="VSSetProperties.jpg" alt="VSSetProperties.jpg" src="../../assets/images/TechnicalPaper/VSSetProperties.jpg">
     </div>
     <br>
     <ol start="9">
@@ -701,19 +611,19 @@
     <br>
     <div style="text-align: center;"><img style="max-width: 100%; max-height: 100%;"
 
-        title="VSProperties02.jpg" alt="VSProperties02.jpg" src="../../assets/images/WorkingDraft/VSProperties02.jpg">
+        title="VSProperties02.jpg" alt="VSProperties02.jpg" src="../../assets/images/TechnicalPaper/VSProperties02.jpg">
     </div>
     <br>
     <br>
     <div style="text-align: center;"><img style="max-width: 100%; max-height: 100%;"
 
-        title="VSProperties03.jpg" alt="VSProperties03.jpg" src="../../assets/images/WorkingDraft/VSProperties03.jpg">
+        title="VSProperties03.jpg" alt="VSProperties03.jpg" src="../../assets/images/TechnicalPaper/VSProperties03.jpg">
     </div>
     <br>
     <br>
     <div style="text-align: center;"><img style="max-width: 100%; max-height: 100%;"
 
-        title="VSProperties04.jpg" alt="VSProperties04.jpg" src="../../assets/images/WorkingDraft/VSProperties04.jpg">
+        title="VSProperties04.jpg" alt="VSProperties04.jpg" src="../../assets/images/TechnicalPaper/VSProperties04.jpg">
     </div>
     <br>
     <ol start="10">
@@ -726,19 +636,19 @@
     <br>
     <div style="text-align: center;"><img style="max-width: 100%; max-height: 100%;"
 
-        title="VSSetBreakpoint.jpg" alt="VSSetBreakpoint.jpg" src="../../assets/images/WorkingDraft/VSSetBreakpoint.jpg">
+        title="VSSetBreakpoint.jpg" alt="VSSetBreakpoint.jpg" src="../../assets/images/TechnicalPaper/VSSetBreakpoint.jpg">
     </div>
     <br>
     <br>
     <div style="text-align: center;"><img style="max-width: 100%; max-height: 100%;"
 
-        title="VSSetBreakpoint02.jpg" alt="VSSetBreakpoint02.jpg" src="../../assets/images/WorkingDraft/VSSetBreakpoint02.jpg">
+        title="VSSetBreakpoint02.jpg" alt="VSSetBreakpoint02.jpg" src="../../assets/images/TechnicalPaper/VSSetBreakpoint02.jpg">
     </div>
     <br>
     <br>
     <div style="text-align: center;"><img style="max-width: 100%; max-height: 100%;"
 
-        title="VSSetBreakpoint03.jpg" alt="VSSetBreakpoint03.jpg" src="../../assets/images/WorkingDraft/VSSetBreakpoint03.jpg">
+        title="VSSetBreakpoint03.jpg" alt="VSSetBreakpoint03.jpg" src="../../assets/images/TechnicalPaper/VSSetBreakpoint03.jpg">
     </div>
     <br>
     <ol start="11">
@@ -765,7 +675,7 @@
 
         title="LoadAdventureSupportMenu.jpg" alt="LoadAdventureSupportMenu.jpg"
 
-        src="../../assets/images/WorkingDraft/LoadAdventureSupportMenu.jpg"> </div>
+        src="../../assets/images/TechnicalPaper/LoadAdventureSupportMenu.jpg"> </div>
     <br>
     <p>The Adventure Support Menu allows Eamon CS to integrate seamlessly with
 	Visual Studio by using the dotnet.exe program. With the .NET Core SDK installed,
@@ -795,7 +705,7 @@
     <br>
     <div style="text-align: center;"><img style="max-width: 100%; max-height: 100%;"
 
-        title="AddGame.jpg" alt="AddGame.jpg" src="../../assets/images/WorkingDraft/AddGame.jpg">
+        title="AddGame.jpg" alt="AddGame.jpg" src="../../assets/images/TechnicalPaper/AddGame.jpg">
     </div>
     <br>
     <p>The only thing you need to do to play your game is run the corresponding
@@ -865,7 +775,7 @@
     <br>
     <div style="text-align: center;"><img style="max-width: 100%; max-height: 100%;"
 
-        title="AddClasses.jpg" alt="AddClasses.jpg" src="../../assets/images/WorkingDraft/AddClasses.jpg">
+        title="AddClasses.jpg" alt="AddClasses.jpg" src="../../assets/images/TechnicalPaper/AddClasses.jpg">
     </div>
     <br>
     <ol start="2">
@@ -878,7 +788,7 @@
     <br>
     <div style="text-align: center;"><img style="max-width: 100%; max-height: 100%;"
 
-        title="AddClasses02.jpg" alt="AddClasses02.jpg" src="../../assets/images/WorkingDraft/AddClasses02.jpg">
+        title="AddClasses02.jpg" alt="AddClasses02.jpg" src="../../assets/images/TechnicalPaper/AddClasses02.jpg">
     </div>
     <br>
     <ol start="3">
@@ -891,31 +801,31 @@
     <br>
     <div style="text-align: center;"><img style="max-width: 100%; max-height: 100%;"
 
-        title="AddClasses03.jpg" alt="AddClasses03.jpg" src="../../assets/images/WorkingDraft/AddClasses03.jpg">
+        title="AddClasses03.jpg" alt="AddClasses03.jpg" src="../../assets/images/TechnicalPaper/AddClasses03.jpg">
     </div>
     <br>
     <br>
     <div style="text-align: center;"><img style="max-width: 100%; max-height: 100%;"
 
-        title="AddClasses04.jpg" alt="AddClasses04.jpg" src="../../assets/images/WorkingDraft/AddClasses04.jpg">
+        title="AddClasses04.jpg" alt="AddClasses04.jpg" src="../../assets/images/TechnicalPaper/AddClasses04.jpg">
     </div>
     <br>
     <br>
     <div style="text-align: center;"><img style="max-width: 100%; max-height: 100%;"
 
-        title="AddClasses05.jpg" alt="AddClasses05.jpg" src="../../assets/images/WorkingDraft/AddClasses05.jpg">
+        title="AddClasses05.jpg" alt="AddClasses05.jpg" src="../../assets/images/TechnicalPaper/AddClasses05.jpg">
     </div>
     <br>
     <br>
     <div style="text-align: center;"><img style="max-width: 100%; max-height: 100%;"
 
-        title="AddClasses06.jpg" alt="AddClasses06.jpg" src="../../assets/images/WorkingDraft/AddClasses06.jpg">
+        title="AddClasses06.jpg" alt="AddClasses06.jpg" src="../../assets/images/TechnicalPaper/AddClasses06.jpg">
     </div>
     <br>
     <br>
     <div style="text-align: center;"><img style="max-width: 100%; max-height: 100%;"
 
-        title="AddClasses07.jpg" alt="AddClasses07.jpg" src="../../assets/images/WorkingDraft/AddClasses07.jpg">
+        title="AddClasses07.jpg" alt="AddClasses07.jpg" src="../../assets/images/TechnicalPaper/AddClasses07.jpg">
     </div>
     <br>
     <ol start="4">
@@ -935,13 +845,13 @@
     <br>
     <div style="text-align: center;"><img style="max-width: 100%; max-height: 100%;"
 
-        title="AddClasses08.jpg" alt="AddClasses08.jpg" src="../../assets/images/WorkingDraft/AddClasses08.jpg">
+        title="AddClasses08.jpg" alt="AddClasses08.jpg" src="../../assets/images/TechnicalPaper/AddClasses08.jpg">
     </div>
     <br>
     <br>
     <div style="text-align: center;"><img style="max-width: 100%; max-height: 100%;"
 
-        title="AddClasses09.jpg" alt="AddClasses09.jpg" src="../../assets/images/WorkingDraft/AddClasses09.jpg">
+        title="AddClasses09.jpg" alt="AddClasses09.jpg" src="../../assets/images/TechnicalPaper/AddClasses09.jpg">
     </div>
     <br>
     <h4>DELETING CUSTOM ADVENTURE CLASSES</h4>
@@ -974,7 +884,7 @@
     <br>
     <div style="text-align: center;"><img style="max-width: 100%; max-height: 100%;"
 
-        title="DeleteClasses.jpg" alt="DeleteClasses.jpg" src="../../assets/images/WorkingDraft/DeleteClasses.jpg">
+        title="DeleteClasses.jpg" alt="DeleteClasses.jpg" src="../../assets/images/TechnicalPaper/DeleteClasses.jpg">
     </div>
     <br>
     <ol start="2">
@@ -984,7 +894,7 @@
     <br>
     <div style="text-align: center;"><img style="max-width: 100%; max-height: 100%;"
 
-        title="DeleteClasses02.jpg" alt="DeleteClasses02.jpg" src="../../assets/images/WorkingDraft/DeleteClasses02.jpg">
+        title="DeleteClasses02.jpg" alt="DeleteClasses02.jpg" src="../../assets/images/TechnicalPaper/DeleteClasses02.jpg">
     </div>
     <br>
     <ol start="3">
@@ -995,7 +905,7 @@
     <br>
     <div style="text-align: center;"><img style="max-width: 100%; max-height: 100%;"
 
-        title="DeleteClasses03.jpg" alt="DeleteClasses03.jpg" src="../../assets/images/WorkingDraft/DeleteClasses03.jpg">
+        title="DeleteClasses03.jpg" alt="DeleteClasses03.jpg" src="../../assets/images/TechnicalPaper/DeleteClasses03.jpg">
     </div>
     <br>
     <h4>DELETING EXISTING ADVENTURES</h4>
@@ -1021,7 +931,7 @@
     <br>
     <div style="text-align: center;"><img style="max-width: 100%; max-height: 100%;"
 
-        title="DeleteGame.jpg" alt="DeleteGame.jpg" src="../../assets/images/WorkingDraft/DeleteGame.jpg">
+        title="DeleteGame.jpg" alt="DeleteGame.jpg" src="../../assets/images/TechnicalPaper/DeleteGame.jpg">
     </div>
     <br>
   </body>
