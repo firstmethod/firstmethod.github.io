@@ -30,8 +30,8 @@
 				<li>Enter adventure name:  <code>Riddles of the Duergar Quarry</code></li>
 				<li>Enter author name:  <code>Michael Penner</code></li>
 				<li>Enter author initials:  <code>MP</code></li>
-				<li>Add game to databases other than WIP.XML:  <code>N</code></li>
-				<li>Add game to WIP.XML:  <code>Y</code></li>
+				<li>Add game to databases other than WIP.DAT:  <code>N</code></li>
+				<li>Add game to WIP.DAT:  <code>Y</code></li>
 				<li>Press enter to default all other options</li>
 				<li>Add adventure to Eamon CS:  <code>Y</code></li>
 			</ul>
@@ -83,8 +83,8 @@
 	<p>It's looking good so far, but there are a few loose ends to tie up.  Both records
 	need their Description fields set, while the Module record needs its IntroStory field
 	set.  These properties can be entered individually in EamonDD through the appropriate
-	Edit One Field record menu or manually into the corresponding .XML file using a text
-	editor.  For the Module's Description, I'll enter the following text:</p>
+	Edit One Field record menu or manually into the corresponding .DAT file using the 7-Zip
+	utility.  For the Module's Description, I'll enter the following text:</p>
 	<p><pre>
 	Mount Everdes, an extinct volcano located in the Horn Belt's southern reaches, is mostly unexplored.  But Eamon
 	University's Department of Archaeology has made a compelling discovery on its steppes and requires assistance to
@@ -176,7 +176,7 @@
 	story is used or presented.</p>
 	<p>The numbering sequence used for Effect Uids in Riddles of the Duergar Quarry is deliberate.
 	Grouping related Effects together sequentially is optional but makes them easier to find and
-	improves the logical layout of the EFFECTS.XML file.  It may also lead to gaps between Effect
+	improves the logical layout of the EFFECTS.DAT file.  It may also lead to gaps between Effect
 	Uid sets, depending on how the game's collection of Effects is created.  These gaps are
 	perfectly acceptable since Eamon CS uses a database to store records instead of arrays as with
 	older Eamon systems.  I'm using the following Effect Uid sets for this game, but you may need
@@ -189,11 +189,11 @@
 	<li>250-275: Module Desc</li>
 	<li>950-999: Extended Hint Answers</li>
 	</ul>
-	<p>Effects organized using this strategy can be created in one of two ways. The EFFECTS.XML text
-	file can be directly edited by those familiar with its format; this may be the easiest solution.
-	EamonDD can also be used, but its default behavior automatically assigns Uids to new records.
-	Changing the Config record allows Uids to be set explicitly, but EamonDD will revert back to
-	its default behavior when the program restarts:</p>
+	<p>Effects organized using this strategy can be created in one of two ways. The EFFECTS.DAT
+	datafile can be directly edited by those familiar with its format; this may be the easiest
+	solution.  EamonDD can also be used, but its default behavior automatically assigns Uids to
+	new records.  Changing the Config record allows Uids to be set explicitly, but EamonDD will
+	revert back to its default behavior when the program restarts:</p>
 	<ol>
 		<li>Run EamonDD\EditRiddlesOfTheDuergarQuarry.bat (or .sh for Unix)</li>
 		<li>Choose <code>1</code>:  Config record maintenance</li>
@@ -204,14 +204,14 @@
 		<li>Save this record:  <code>Y</code></li>
 	</ol>
 	<h4>FINISHING THE INITIAL HINT RECORDS</h4>
-	<p>The game is generated with a default set of Hint records in HINTS.XML, but they require Effect
+	<p>The game is generated with a default set of Hint records in HINTS.DAT, but they require Effect
 	chaining for full implementation.  There are two ways to accomplish this task.  The first requires
 	knowledge of text file formats and involves copying the corresponding Effect records from an
 	existing game into the new game and backpatching where appropriate.  The second involves using
 	EamonDD in explicit Uid mode.  Here are the expected Effect record Uids and Descriptions:</p>
 	<ul>
 	<li>950: LARGE OVEN.</li>
-	<li>951: See EAMON CS 1.7 NEW COMMANDS for additional details.</li>
+	<li>951: See EAMON CS 1.8 NEW COMMANDS for additional details.</li>
 	<li>952: floor and you can GET ALL.</li>
 	<li>953: to remove from or add to the container.</li>
 	</ul>
@@ -386,10 +386,10 @@
 	<h4>EFFECTS - ROUND 1</h4>
 	<p>I've created some effects based on where I foresee the game's storyline leading.  Rather
 	than listing them here, it makes more sense to enter them using EamonDD or add them directly
-	to the EFFECTS.XML textfile.  I did the latter and also updated the NumEffects property in
-	MODULE.XML accordingly.  I can add additional effects as the game progresses.</p>
+	to the EFFECTS.DAT datafile using 7-Zip.  I did the latter and also updated the NumEffects
+	property in MODULE.DAT accordingly.  I can add additional effects as the game progresses.</p>
 	<h4>ROOMS - ROUND 1</h4>
-	<p>I'm still unwilling to nail down the map at this point, but regardless progress can be
+	<p>I'm still not ready to nail down the map at this point, but regardless progress can be
 	made in that area.  I can create rooms for all the known artifacts and monsters and leave
 	the details for later.  So I'll do that for the first round.</p>
 	<br>
