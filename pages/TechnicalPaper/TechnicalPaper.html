@@ -141,7 +141,7 @@
       Manager is what "executes" the plugin, not the calling C#
       environment.&nbsp; At the bottom of the software stack, you have
       Polenter.SharpSerializer.dll which handles loading and saving of the
-      game's textfiles and Eamon.dll which holds code common to all ECS
+      game's datafiles and Eamon.dll which holds code common to all ECS
       plugins.&nbsp; EamonRT.dll contains the vanilla game engine used by all
       non-customized adventures.&nbsp; For customized adventures, the game
       plugin (e.g., TheBeginnersCave.dll) contains custom code specific to that
@@ -153,8 +153,8 @@
     <p>The source code for Plugin Managers and system plugins resides in the
       appropriate directory under System; for adventures, it is in the
       adventure-specific directory under Adventures.</p>
-    <p>The Main Hall textfiles reside in System\Bin, making them easily
-      accessible to all plugins.&nbsp; Game-specific textfiles (both original
+    <p>The Main Hall datafiles reside in System\Bin, making them easily
+      accessible to all plugins.&nbsp; Game-specific datafiles (both original
       and save game) reside under Adventures in their respective game
       directories.</p>
     <p>Here is a final note on the architectural differences between ECS Desktop
@@ -162,8 +162,8 @@
       directory and are loaded by EamonPM.WindowsUnix.dll only when needed (and
       reused once loaded).&nbsp; In contrast, when building
       EamonPM.Android-Signed.apk, all plugins are statically linked in, and all
-      textfiles are embedded, producing a monolithic application.&nbsp; When
-      delivering the .apk onto the mobile device, the textfiles copy (when
+      datafiles are embedded, producing a monolithic application.&nbsp; When
+      delivering the .apk onto the mobile device, the datafiles copy (when
       appropriate) to the device's file system - the plugins remain part of the
       application.&nbsp; In spite of this, the plugin managers are very similar
       internally.</p>
@@ -443,7 +443,7 @@
         see what's available to you.</li>
       <br>
       <li>"HINTS" gives you a list of hints for the current adventure. You
-        should always carefully read EAMON CS 1.7 GENERAL HELP and EAMON CS 1.7
+        should always carefully read EAMON CS 1.8 GENERAL HELP and EAMON CS 1.8
         NEW COMMANDS as these hints may be subtly different than their Eamon
         Deluxe counterparts. Consider the following:</li>
       <br>
@@ -472,13 +472,15 @@
       improvements made to individual adventures can be pushed back into the
       base framework for use by all games. As time goes on, the system will grow
       in flexibility and power.</p>
-    <p>The textfile format used by Eamon CS deserves an explanation. The game
-      produces ASCII XML files that represent C# object graphs, a radical data
-      storage paradigm shift. These files also play a critical role in the
-      development of customized adventures. Take a look in the MONSTERS.XML file
-      in Test Adventure (a non-customized adventure), and you will see the
+    <p>The datafile format used by Eamon CS deserves an explanation. The game
+      produces ASCII XML files representing C# object graphs; each file is further
+      gzipped in its own archive to conserve space. If needed, you can open these
+      files using the 7-Zip utility and right-click to get a context menu to View
+      or Edit.  In addition to storing data, these files play a critical role in
+      the development of customized adventures. Take a look in the MONSTERS.DAT
+      file in Test Adventure (a non-customized adventure), and you will see the
       serialized class is Eamon.Game.Monster (from Eamon.dll). But in The
-      Beginner's Cave, you will see it's TheBeginnersCave.Game.Monster (from
+      Beginner's Cave, you will see its TheBeginnersCave.Game.Monster (from
       TheBeginnersCave.dll). These are two different classes, the second is a
       subclass of the first, and implements custom code that is explicitly used
       by The Beginner's Cave. Now compare the batch file EditTestAdventure.bat,
@@ -491,12 +493,12 @@
       least this gives you an idea of how it works.</p>
     <p>With BASIC Eamons that use files containing just data, you can bypass the
       Dungeon Designer program altogether and build these files by hand. You
-      should avoid this practice in Eamon CS due to the specialized textfile
-      format. The EamonDD program is instrumental in producing textfiles of the
+      should avoid this practice in Eamon CS due to the specialized datafile
+      format. The EamonDD program is instrumental in producing files of the
       correct format, and you should rely on it to do so. However, you can still
-      manually tweak the textfiles with your favorite editor. Just be very
-      careful not to violate the file format, as the
-      Polenter.SharpSerializer.dll library can be picky.</p>
+      manually tweak the datafiles with 7-Zip. Just be very careful not to
+      violate the file format, as the Polenter.SharpSerializer.dll library can
+      be picky.</p>
     <p>The EamonRT.dll base adventure runtime takes the form of a Finite State
       Machine (FSM). For those unfamiliar, this is a technique used to model
       complex program behavior. The main game loop is 15 lines long; all complex
@@ -748,8 +750,8 @@
       custom classes, complete with matching interfaces (if needed), based on
       many classes in the Eamon, EamonDD or EamonRT libraries. These generated
       classes appear in the selected adventure, and then you are free to add
-      your custom code. For any class with a corresponding .XML file (e.g.,
-      Room.cs and ROOMS.XML), the .XML file will be updated to reflect the newly
+      your custom code. For any class with a corresponding .DAT file (e.g.,
+      Room.cs and ROOMS.DAT), the .DAT file will be updated to reflect the newly
       added class.</p>
     <p>While the code generator works great with classes that fit the template,
       it may fail with others that don't, so this comes with a caveat. <i>Always
@@ -870,8 +872,8 @@
       you have classes that are reliant on explicitly deleted interfaces your
       game will not compile until the classes are fixed or removed. If you
       delete classes, any paired interfaces will automatically delete as well.
-      If the removed class has a corresponding .XML file (e.g., Room.cs and
-      ROOMS.XML) it will be updated to reflect the appropriate parent class.
+      If the removed class has a corresponding .DAT file (e.g., Room.cs and
+      ROOMS.DAT) it will be updated to reflect the appropriate parent class.
       There is no undoing this operation so you should back up your work if
       there is a chance you'll change your mind.</p>
     <p>The following example demonstrates the removal of several classes from
@@ -898,7 +900,7 @@
     </div>
     <br>
     <ol start="3">
-      <li>One of the deleted classes, Hint.cs, has a matching HINTS.XML file.
+      <li>One of the deleted classes, Hint.cs, has a matching HINTS.DAT file.
         Notice that the data type is no longer WalledCityOfDarkness.Game.Hint
         but was reverted to the parent class Eamon.Game.Hint.</li>
     </ol>
