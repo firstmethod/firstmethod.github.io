@@ -5,7 +5,7 @@
         <title>The Making Of: Riddles of the Duergar Quarry</title>
     </head>
     <body>
-        <h4>PREFACE</h4>
+        <h4>1. PREFACE</h4>
         <p>[Note:&nbsp; this document is a work in progress]</p>
         <p>
             Welcome to the first of a series of documents that will detail the steps required to build a new Eamon CS game. It is a real hands-on tutorial, perhaps even laborious in places, but it should give you an idea of what is
@@ -16,7 +16,7 @@
             The first game built will be called "Riddles of the Duergar Quarry." This adventure will dig into many facets of the Eamon CS game engine to show its capabilities. It should be mentioned - WARNING: HEAVY SPOILERS; you may wish
             to play the game before returning to this treatise.
         </p>
-        <h4>BOOTSTRAPPING RIDDLES OF THE DUERGAR QUARRY</h4>
+        <h4>2. BOOTSTRAPPING RIDDLES OF THE DUERGAR QUARRY</h4>
         <p>I'll start by bootstrapping the game using the Adventure Support Menu:</p>
         <p></p>
         <ol>
@@ -44,7 +44,7 @@
             EditRiddlesOfTheDuergarQuarry.bat (or .sh for Unix) and ensure EamonDD loads the adventure. Then I can leave the game editor running, as the game is not yet playable and needs a few records added. That is the next section's
             topic.
         </p>
-        <h4>MAKING THE GAME (MINIMALLY) PLAYABLE</h4>
+        <h4>3. MAKING THE GAME (MINIMALLY) PLAYABLE</h4>
         <p>The game will not be playable until a Module record, and Room record are added. I will omit the more involved details of both these records when entering them initially.</p>
         <ol>
             <li>Run EamonDD\EditRiddlesOfTheDuergarQuarry.bat (or .sh for Unix)</li>
@@ -78,7 +78,7 @@
             The oversized Room Description property requires an Effect record to be added (note **150), but I can ignore that for now as the game engine will still process it properly. The topic of Effect record chaining will be examined in
             the next section when I fill in the Module's Description and Intro Story properties.
         </p>
-        <h4>FINISHING THE MODULE AND FIRST ROOM RECORD</h4>
+        <h4>4. FINISHING THE MODULE AND FIRST ROOM RECORD</h4>
         <p>
             It's looking good so far, but there are a few loose ends to tie up. Both records need their Description fields set, while the Module record needs its IntroStory field set. These properties can be entered individually in EamonDD
             through the appropriate Edit One Field record menu or manually into the corresponding .DAT file using the 7-Zip utility. For the Module's Description, I'll enter the following text:
@@ -169,7 +169,7 @@
             For reference, Effect Uids 200 through 211 contain the entire introduction story; you can look at these Effects to see how it is linked together. The remaining story sections will be omitted from this tutorial as they are
             variants of what has already been presented.
         </p>
-        <h4>SOME RELEVANT NOTES</h4>
+        <h4>5. SOME RELEVANT NOTES</h4>
         <p>
             Here are a few other things I'd like to note for completeness. These aren't necessarily relevant to Riddles of the Duergar Quarry but are used by other adventures in many cases. See the Eamon CS Dungeon Designer's Manual for
             more detail on these topics.
@@ -210,7 +210,7 @@
             <li>Enter Generate Uids: <code>0</code></li>
             <li>Save this record: <code>Y</code></li>
         </ol>
-        <h4>FINISHING THE INITIAL HINT RECORDS</h4>
+        <h4>6. FINISHING THE INITIAL HINT RECORDS</h4>
         <p>
             The game is generated with a default set of Hint records in HINTS.DAT, but they require Effect chaining for full implementation. There are two ways to accomplish this task. The first requires knowledge of text file formats and
             involves copying the corresponding Effect records from an existing game into the new game and backpatching where appropriate. The second involves using EamonDD in explicit Uid mode. Here are the expected Effect record Uids and
@@ -222,7 +222,7 @@
             <li>952: floor and you can GET ALL.</li>
             <li>953: to remove from or add to the container.</li>
         </ul>
-        <h4>STRATEGIES FOR DEVELOPING GAME CONTENT</h4>
+        <h4>7. STRATEGIES FOR DEVELOPING GAME CONTENT</h4>
         <p>
             Now that the preliminary stuff is out of the way, I can move onto more interesting things. Developing a new Eamon adventure can be a bit daunting; each game author approaches it differently, no doubt. It has been like this from
             the very beginning. There are at least two obvious ways to build a new game. The first is to create a comprehensive design document that describes it. That is the best way to develop an adventure with an over-arching storyline
@@ -236,7 +236,7 @@
         <p>
             <b>IMPORTANT: When using EamonDD to add or update records, always exit the program cleanly from the Main Menu, and when it asks if you want to save modifications, respond with <code>Y</code> (if you wish to keep them).</b>
         </p>
-        <h4>MONSTERS AND ARTIFACTS - ROUND 1</h4>
+        <h4>8. MONSTERS AND ARTIFACTS - ROUND 1</h4>
         <p>I've identified the following prospective monsters at this point, subject to further revision:</p>
         <ol>
             <li>Professor Berescroft: leads the dig, supervises Grad students</li>
@@ -377,17 +377,17 @@
             <li>Press enter to default all other properties</li>
             <li>Save this record: <code>Y</code></li>
         </ol>
-        <h4>EFFECTS - ROUND 1</h4>
+        <h4>9. EFFECTS - ROUND 1</h4>
         <p>
             I've created some effects based on where I foresee the game's storyline leading. Rather than listing them here, it makes more sense to enter them using EamonDD or add them directly to the EFFECTS.DAT datafile using 7-Zip. I did
             the latter and also updated the NumEffects property in MODULE.DAT accordingly. I can add additional effects as the game progresses.
         </p>
-        <h4>ROOMS - ROUND 1</h4>
+        <h4>10. ROOMS - ROUND 1</h4>
         <p>
             I'm still not ready to nail down the map at this point, but regardless progress can be made in that area. I can create rooms for all the known artifacts and monsters and leave the details for later. So I'll do that for the first
             round.
         </p>
-        <h4>MONSTERS AND ARTIFACTS - ROUND 2</h4>
+        <h4>11. MONSTERS AND ARTIFACTS - ROUND 2</h4>
         <p>
             At this point, many paths to continue developing Riddles of the Duergar Quarry open up. But I'm going to press on and further build out the already-identified objects in an iterative fashion; this includes refinements to naming
             and entering key data such as detailed descriptions.
